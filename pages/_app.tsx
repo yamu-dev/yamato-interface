@@ -22,7 +22,7 @@ const theme = extendBaseTheme({
 const queryClient = new QueryClient();
 
 // 1. Get projectId at https://cloud.walletconnect.com
-const projectId = "14ffdce0ca7c6aa0f98a9424c13ac3e2";
+const projectId = process.env.NEXT_PUBLIC_PROJECT_ID as string;
 
 // 2. Create wagmiConfig
 const metadata = {
