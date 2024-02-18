@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import "lib/i18nConfig";
 import { createWeb3Modal } from "@web3modal/wagmi/react";
 import { defaultWagmiConfig } from "@web3modal/wagmi/react/config";
 import { WagmiProvider } from "wagmi";
@@ -8,15 +9,15 @@ import {
   ChakraBaseProvider,
   extendBaseTheme,
   theme as chakraTheme,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 
-const { Button } = chakraTheme.components
+const { Button } = chakraTheme.components;
 
 const theme = extendBaseTheme({
   components: {
     Button,
   },
-})
+});
 
 // 0. Setup queryClient
 const queryClient = new QueryClient();
