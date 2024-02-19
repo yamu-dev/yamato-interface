@@ -22,7 +22,6 @@ export default function DashboardPage() {
   return (
     <Layout>
       <Container maxW="container.xl" py={16}>
-        {/* <Heading size={"lg"}>{t("DASHBOARD")}</Heading> */}
 
         <Center >
           <Grid
