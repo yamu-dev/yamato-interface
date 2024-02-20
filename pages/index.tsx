@@ -1,7 +1,9 @@
-export default function ConnectButton() {
+import AccountDashboard from "components";
+
+export default function VotingEscrow() {
   return (
     <>
-      <w3m-button balance={"hide"} />
+      <AccountDashboard />
     </>
   );
 }
