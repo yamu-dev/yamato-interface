@@ -19,13 +19,15 @@ export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
   const dividerColor = useColorModeValue("gray.200", "gray.600");
 
   return (
-    <Card flex={1} bg={cardBackground} boxShadow="base" maxW='lg'>
+    <Card flex={1} bg={cardBackground} boxShadow="base" maxW="lg">
       <CardBody>
         <Heading fontSize={"2xl"} color={headingColor} fontWeight="bold">
           {t("VE_YMT")}
           <Tooltip
             hasArrow
-            label={<Text whiteSpace={"pre-wrap"}>{t("VE_YMT_REWARD_HELP")}</Text>}
+            label={
+              <Text whiteSpace={"pre-wrap"}>{t("VE_YMT_REWARD_HELP")}</Text>
+            }
             bg={cardBackground}
             color={headingColor}
           >

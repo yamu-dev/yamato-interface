@@ -4,7 +4,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import MetaTags from "./MetaTags";
 
-
 export default function Layout({
   title,
   children,
@@ -16,9 +15,7 @@ export default function Layout({
     <>
       <MetaTags />
       <Header title={title ? title : "VotingEscrow"} />
-      <Box bg={"gray.800"}>
-        {children}
-      </Box>
+      <Box bg={"gray.800"}>{children}</Box>
       <Footer />
     </>
   );

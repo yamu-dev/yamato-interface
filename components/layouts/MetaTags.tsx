@@ -45,7 +45,7 @@ export default function MetaTags(props: MetaTagProps | undefined) {
         content={contents.image ? contents.image : `${bgImage.src}`}
       />
       <link rel="icon" href="/favicon.ico" />
-      <link href="./output.css" rel="stylesheet"/>
+      <link href="./output.css" rel="stylesheet" />
       {!!contents.children && contents.children}
     </Head>
   );
