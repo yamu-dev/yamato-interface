@@ -32,7 +32,12 @@ type FormModalProps = {
   onClose: () => void;
 };
 
-export default function FormModal({ address, type, isOpen, onClose }: FormModalProps) {
+export default function FormModal({
+  address,
+  type,
+  isOpen,
+  onClose,
+}: FormModalProps) {
   const { colorMode } = useColorMode();
   const locale = "ja"; // Mock locale
   const t = (key: string) => key; // Mock translation function
@@ -58,11 +63,18 @@ export default function FormModal({ address, type, isOpen, onClose }: FormModalP
                   <Box w={"full"}>
                     <FormControl mt={4}>
                       <Flex justifyContent={"space-between"}>
-                        <FormLabel alignItems={"baseline"}>INPUT_LOCK_AMOUNT</FormLabel>
+                        <FormLabel alignItems={"baseline"}>
+                          INPUT_LOCK_AMOUNT
+                        </FormLabel>
                       </Flex>
 
                       <Flex alignItems={"center"}>
-                        <NumberInput flex="1" name="value" min={0} max={Number.MAX_SAFE_INTEGER}>
+                        <NumberInput
+                          flex="1"
+                          name="value"
+                          min={0}
+                          max={Number.MAX_SAFE_INTEGER}
+                        >
                           <NumberInputField />
                           <NumberInputStepper>
                             <NumberIncrementStepper />
@@ -81,7 +93,9 @@ export default function FormModal({ address, type, isOpen, onClose }: FormModalP
                 </HStack>
 
                 <FormControl mt={4}>
-                  <FormLabel alignItems={"baseline"}>SELECT_UNLOCK_DATE</FormLabel>
+                  <FormLabel alignItems={"baseline"}>
+                    SELECT_UNLOCK_DATE
+                  </FormLabel>
                   <Flex alignItems={"center"}>
                     <Box>
                       <DatePicker
@@ -97,7 +111,12 @@ export default function FormModal({ address, type, isOpen, onClose }: FormModalP
                       (UTC)
                     </chakra.span>
                   </Flex>
-                  <Grid mt={2} templateRows="repeat(2, 1fr)" templateColumns="repeat(3, 1fr)" gap={2}>
+                  <Grid
+                    mt={2}
+                    templateRows="repeat(2, 1fr)"
+                    templateColumns="repeat(3, 1fr)"
+                    gap={2}
+                  >
                     <GridItem>
                       <Button size="sm" w="full">
                         1 week
@@ -131,7 +150,13 @@ export default function FormModal({ address, type, isOpen, onClose }: FormModalP
                   </Grid>
                 </FormControl>
 
-                <Button mt={4} w={"full"} variant="solid" colorScheme="green" type="submit">
+                <Button
+                  mt={4}
+                  w={"full"}
+                  variant="solid"
+                  colorScheme="green"
+                  type="submit"
+                >
                   {type}
                 </Button>
               </form>

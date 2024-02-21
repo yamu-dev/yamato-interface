@@ -24,11 +24,7 @@ export default function Reward({
           {token === zeroAddress ? "ETH" : "TODO"}
         </Box>
       </Box>
-      <Button
-        variant={"solid"}
-        colorScheme="green"
-        size={"sm"}
-      >
+      <Button variant={"solid"} colorScheme="green" size={"sm"}>
         {t("CLAIM")}
       </Button>
     </HStack>
