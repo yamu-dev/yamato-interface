@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { useAccount } from "wagmi";
 import Layout from "components/layouts/layout";
-import MetaTags from "components/layouts/MetaTags";
 import VotingEscrow from "components/votingEscrow/index";
 import { useTranslation } from "react-i18next";
 
@@ -22,21 +21,11 @@ export default function AccountDashboard() {
 
   return (
     <Layout>
-      <MetaTags/>
       <Container maxW="container.xl" py={16}>
-
-        <Center >
-          <Grid
-            bg="white"
-            templateColumns="repeat(1, 1fr)"
-            gap={8}
-            mt={{ base: 4, md: 8 }}
-            width="80%"
-          >
-            <VotingEscrow address={account.address} />
-          </Grid>
+        <Heading size={"lg"}>{t("DASHBOARD")}</Heading>
+        <Center>
+          <VotingEscrow address={account.address} />
         </Center>
-
       </Container>
     </Layout>
   );
