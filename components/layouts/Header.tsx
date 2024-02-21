@@ -1,4 +1,12 @@
-import { Box, Container, Flex, Heading, Text, Link, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Text,
+  Link,
+  HStack,
+} from "@chakra-ui/react";
 
 type HeaderProps = {
   title?: string;

@@ -18,12 +18,30 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <Box px={{ base: 0, md: 4 }} pb={4} top={"0"} zIndex={100} bg={"gray.900"} opacity={0.975}>
+    <Box
+      px={{ base: 0, md: 4 }}
+      pb={4}
+      top={"0"}
+      zIndex={100}
+      bg={"gray.900"}
+      opacity={0.975}
+    >
       <Container maxW="container.2xl" px={{ base: 2, md: 4 }}>
         <Flex py="4" justifyContent="space-between" alignItems="center">
           <chakra.div flex={1}></chakra.div>
-          <Flex flex={2} py="4" gridGap={4} justifyContent="center" alignItems="center">
-            <Tooltip hasArrow label={<Text whiteSpace={"pre-wrap"}>DeFiGeek Community JAPAN</Text>}>
+          <Flex
+            flex={2}
+            py="4"
+            gridGap={4}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Tooltip
+              hasArrow
+              label={
+                <Text whiteSpace={"pre-wrap"}>DeFiGeek Community JAPAN</Text>
+              }
+            >
               <Link
                 href="https://defigeek.xyz/"
                 target={"_blank"}
@@ -33,7 +51,10 @@ export default function Footer() {
                 <SvgCommunityLogoBlack width="2.5rem" height="2.5rem" />
               </Link>
             </Tooltip>
-            <Tooltip hasArrow label={<Text whiteSpace={"pre-wrap"}>GitHub</Text>}>
+            <Tooltip
+              hasArrow
+              label={<Text whiteSpace={"pre-wrap"}>GitHub</Text>}
+            >
               <Link
                 href="https://github.com/DeFiGeek-Community/"
                 target={"_blank"}
@@ -41,10 +62,13 @@ export default function Footer() {
                 _hover={{ opacity: 0.8 }}
                 padding={"0.3125rem"}
               >
-                <AiFillGithub color={'#FFFFFF'} />
+                <AiFillGithub color={"#FFFFFF"} />
               </Link>
             </Tooltip>
-            <Tooltip hasArrow label={<Text whiteSpace={"pre-wrap"}>GitBook</Text>}>
+            <Tooltip
+              hasArrow
+              label={<Text whiteSpace={"pre-wrap"}>GitBook</Text>}
+            >
               <Link
                 href="https://docs.yamato.fi"
                 target={"_blank"}
@@ -63,7 +87,7 @@ export default function Footer() {
               value={"ja"}
               onChange={(e) => console.log("change", e.target.value)}
               float={"right"}
-              placeholder='言語'
+              placeholder="言語"
             >
               {/* <option value={"ja"}>日本語</option>
               <option value={"en"}>English</option> */}
