@@ -1,5 +1,7 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { useContext, useEffect } from "react";
+
+import { Box, useColorMode } from "@chakra-ui/react";
 import Header from "./Header";
 import Footer from "./Footer";
 import MetaTags from "./MetaTags";
@@ -11,6 +13,12 @@ export default function Layout({
   title?: string;
   children: React.ReactNode;
 }) {
+  // Dark mode only for now
+  const { colorMode, toggleColorMode } = useColorMode();
+  useEffect(() => {
+    if (colorMode === "light") toggleColorMode();
+  }, [colorMode]);
+
   return (
     <>
       <MetaTags />
