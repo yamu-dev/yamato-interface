@@ -18,7 +18,9 @@ function getDefaultLanguage() {
   if (typeof window === "undefined") {
     return "ja";
   }
-  return ["ja", "en"].includes(window.navigator.language) ? window.navigator.language : "ja";
+  return ["ja", "en"].includes(window.navigator.language)
+    ? window.navigator.language
+    : "ja";
 }
 
 const defaultLanguage = getDefaultLanguage();
