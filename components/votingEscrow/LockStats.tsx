@@ -1,4 +1,4 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { HStack, Text, chakra, Spinner } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import NewLockForm from "./NewLockForm";
 
@@ -8,16 +8,28 @@ export default function LockStats({ address }: { address?: `0x${string}` }) {
   return (
     <>
       <HStack justifyContent={"space-between"}>
-        <Text color={"gray.400"}>{t("BALANCE")}</Text>
-        <Text fontSize={"2xl"}>0.00 veYMT</Text>
+        <chakra.p color={"gray.400"}>{t("BALANCE")}</chakra.p>
+        <chakra.p fontSize={"2xl"} color={"white"}>
+          <>{"0.0"}</>
+          <chakra.span color={"gray.400"} fontSize={"lg"} ml={1}>
+            veYMT
+          </chakra.span>
+        </chakra.p>
       </HStack>
       <HStack justifyContent={"space-between"} mt={1}>
-        <Text color={"gray.400"}>{t("YMT_LOCKED")}</Text>
-        <Text fontSize={"2xl"}>0.00 YMT</Text>
+        <chakra.p color={"gray.400"}>{t("YMT_LOCKED")}</chakra.p>
+        <chakra.p fontSize={"2xl"} color={"white"}>
+          <>{"0.0"}</>
+          <chakra.span color={"gray.400"} fontSize={"lg"} ml={1}>
+            YMT
+          </chakra.span>
+        </chakra.p>
       </HStack>
       <HStack justifyContent={"space-between"} mt={1}>
-        <Text color={"gray.400"}>{t("LOCKED_UNTIL")}</Text>
-        <Text fontSize={"2xl"}>-- / -- / --</Text>
+        <chakra.p color={"gray.400"}>{t("LOCKED_UNTIL")}</chakra.p>
+        <chakra.p fontSize={"2xl"} color={"white"}>
+          {"-- / -- / --"}
+        </chakra.p>
       </HStack>
 
       <HStack spacing={4} justifyContent={"flex-end"} mt={2}>
