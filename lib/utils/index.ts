@@ -1,4 +1,3 @@
-import { ETHER_DECIMALS_FOR_VIEW } from "../constants";
 import Big, {
   BigNumberValueType,
   add,
@@ -113,17 +112,4 @@ export const tokenAmountFormat = (
     typeof decimals !== "number" ? parseInt(decimals) : decimals,
   );
   return divide(amount, numerator).toFixed(precision);
-};
-
-export const etherAmountFormat = (
-  amount: BigNumberValueType,
-  precision: number = ETHER_DECIMALS_FOR_VIEW,
-  smallValueNotation: boolean = true,
-): string => {
-  const amountInBig = formatEtherInBig(amount);
-  if (smallValueNotation && amountInBig.gt(0) && amountInBig.lt(0.001)) {
-    return "< 0.001";
-  } else {
-    return amountInBig.toFixed(precision);
-  }
 };

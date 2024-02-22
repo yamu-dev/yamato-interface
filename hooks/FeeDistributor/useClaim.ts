@@ -3,7 +3,8 @@ import {
   useWriteContract,
   useWaitForTransactionReceipt,
 } from "wagmi";
-import FeeDistributorABI from "lib/constants/abis/FeeDistributor.json";
+import { veSystemAbis } from "lib/constants/abi";
+
 
 export default function useClaim({
   address,
@@ -24,6 +25,10 @@ export default function useClaim({
   writeFn: ReturnType<typeof useWriteContract>;
   waitFn: ReturnType<typeof useWaitForTransactionReceipt>;
 } {
+  const chainId = 1;
+  const systemName = "yamato";
+
+  const FeeDistributorABI = veSystemAbis[systemName][chainId].FeeDistributor;
   const config = {
     address: process.env.NEXT_PUBLIC_FEE_DISTRIBUTOR_ADDRESS as `0x${string}`,
     abi: FeeDistributorABI,
