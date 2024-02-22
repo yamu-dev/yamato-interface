@@ -7,7 +7,7 @@ export default {
   CONFIRMATION: "Confirmation",
   EARLY_USER_REWARD: "Early user rewards",
   EARLY_USER_REWARD_HELP:
-    "Early users are rewarded with claimable YMT tokens.\n\n(For Auction Participants)\nThe claimable tokens are awarded based on the bid amount once claiming the tokens purchased in the auction.\n\n(For Auction Owners)\nThe claimable tokens are awarded based on the sales amount once withdrawing the total raised after the auction ends.\n\nEarly user rewards will end once the budget of 50 million YMT has been claimed. Even if you have the eligibility, you cannot claim if all the budget has been claimed.",
+    "Early users are rewarded with claimable YMT tokens.\n\nEarly user rewards will end once the budget of 50 million YMT has been claimed. Even if you have the eligibility, you cannot claim if all the budget has been claimed.",
   CLAIMABLE: "Claimable",
   VE_YMT: "veYMT",
   VE_YMT_REWARD: "veYMT Rewards",
@@ -25,7 +25,6 @@ export default {
     "The token allocation amount is too small, and some participants may receive 0 token allocation (less than token decimals). Those who receive 0 allocation can initiate a refund request. Please consider to increase the allocation amount. Please note token allocation to each bidder is calculated by rounding down, and the aggregated amount of fraction tokens (less than token decimals) for each bidder will remain locked in the contract address forever(it cannot be withdrawn). ",
   TARGET_TOTAL_RAISED_EXPLANATION:
     "The target amount of this auction. Users can buy even after this value is achieved.",
-  TEMPLATE_EXPLANATION: "Explanation of Each Template ",
 
   // VotingEscrow
   VE_CREATE_LOCK: "Create lock",
