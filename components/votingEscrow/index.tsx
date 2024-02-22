@@ -1,5 +1,6 @@
 import {
   Card,
+  CardHeader,
   CardBody,
   Heading,
   Tooltip,
@@ -14,29 +15,27 @@ import Reward from "components/votingEscrow/Rewards";
 
 export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
   const { t } = useTranslation();
-  const cardBackground = useColorModeValue("white", "gray.800");
-  const headingColor = useColorModeValue("gray.700", "white");
-  const dividerColor = useColorModeValue("gray.200", "gray.600");
 
   return (
-    <Card flex={1} bg={cardBackground} boxShadow="base" maxW="lg">
+    <Card flex={1} maxW="lg" p={4}>
+      <CardHeader>
+        <Heading size="md">My VotingEscrow</Heading>
+      </CardHeader>
       <CardBody>
-        <Heading fontSize={"2xl"} color={headingColor} fontWeight="bold">
+        <Heading fontSize={"xl"}>
           {t("VE_YMT")}
           <Tooltip
             hasArrow
             label={
               <Text whiteSpace={"pre-wrap"}>{t("VE_YMT_REWARD_HELP")}</Text>
             }
-            bg={cardBackground}
-            color={headingColor}
           >
             <QuestionIcon fontSize={"lg"} mb={1} ml={1} cursor="help" />
           </Tooltip>
         </Heading>
-        <Divider mt={2} mb={4} borderColor={dividerColor} />
+        <Divider variant="dashed" mt={4} mb={4} />
         <LockStats address={address} />
-        <Divider variant="dashed" py={2} borderColor={dividerColor} />
+        <Divider variant="dashed" py={2} />
         <Reward address={address} />
       </CardBody>
     </Card>
