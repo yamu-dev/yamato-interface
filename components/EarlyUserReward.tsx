@@ -1,7 +1,6 @@
 import {
   Button,
   Card,
-  CardHeader,
   CardBody,
   Heading,
   Tooltip,
@@ -32,8 +31,8 @@ export default function EarlyUserReward({
       }}
       color={"#818181"}
     >
-      <CardHeader bg={"#f9aea5"} py={2}>
-        <Heading fontSize={"xl"} color={"white"}>
+      <CardBody>
+        <Heading fontSize={"xl"}>
           {t("EARLY_USER_REWARD")}
           <Tooltip
             hasArrow
@@ -44,8 +43,7 @@ export default function EarlyUserReward({
             <QuestionIcon fontSize={"md"} mb={1} ml={1} />
           </Tooltip>
         </Heading>
-      </CardHeader>
-      <CardBody>
+        <Divider mt={2} mb={4} />
         <HStack justifyContent={"space-between"}>
           <chakra.div>{t("CLAIMABLE")}</chakra.div>
           <chakra.div fontSize={"2xl"}>

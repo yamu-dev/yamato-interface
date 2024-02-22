@@ -28,7 +28,7 @@ export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
     >
       <CardHeader bg={"#f9aea5"} py={2}>
         <Heading size="md" color={"white"}>
-          MY {t("VE_YMT")}
+          My Information
         </Heading>
       </CardHeader>
       <CardBody>
