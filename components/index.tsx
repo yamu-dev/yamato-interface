@@ -1,15 +1,5 @@
 import Router from "next/router";
-import {
-  Spinner,
-  Container,
-  Heading,
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  Center,
-  Grid,
-} from "@chakra-ui/react";
+import { Container, Heading, Center } from "@chakra-ui/react";
 import { useAccount } from "wagmi";
 import Layout from "components/layouts/layout";
 import VotingEscrow from "components/votingEscrow/index";
