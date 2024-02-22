@@ -7,6 +7,7 @@ import {
   Link,
   HStack,
 } from "@chakra-ui/react";
+import SvgYamatoLogWithTitle from "../svgs/YamatoLogo";
 
 type HeaderProps = {
   title?: string;
@@ -19,7 +20,7 @@ export default function Header({ title }: HeaderProps) {
       position={"sticky"}
       top={"0"}
       zIndex={100}
-      bg={"chakra-body-bg"}
+      bg={"rgb(252, 250, 242)"}
       opacity={0.975}
     >
       <Container maxW="container.2xl" px={{ base: 2, md: 4 }}>
@@ -30,21 +31,8 @@ export default function Header({ title }: HeaderProps) {
           alignItems="center"
         >
           <HStack>
-            <Link
-              href="/"
-              textDecoration={"none"}
-              _hover={{ textDecoration: "none" }}
-            >
-              <Heading as="h1" fontSize="xl">
-                <Text
-                  bgGradient="linear(to-l, #7928CA, #FF0080)"
-                  bgClip="text"
-                  fontSize="xl"
-                  fontWeight="extrabold"
-                >
-                  {title ? title : "VotingEscrow"}
-                </Text>
-              </Heading>
+            <Link href="/">
+              <SvgYamatoLogWithTitle width={200} height={30} />
             </Link>
           </HStack>
           <HStack spacing={{ base: 2, md: 4 }}>
