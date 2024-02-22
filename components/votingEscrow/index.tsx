@@ -6,7 +6,6 @@ import {
   Tooltip,
   Divider,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { QuestionIcon } from "@chakra-ui/icons";
 import { useTranslation } from "react-i18next";
@@ -17,12 +16,23 @@ export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
   const { t } = useTranslation();
 
   return (
-    <Card flex={1} maxW="lg" p={4}>
-      <CardHeader>
-        <Heading size="md">My VotingEscrow</Heading>
+    <Card
+      flex={1}
+      maxW="lg"
+      bg={"#fcfaf2"}
+      style={{
+        boxShadow: "rgba(0, 0, 0, 0.25) 3px 3px 0px",
+        borderRadius: "0px",
+      }}
+      color={"#818181"}
+    >
+      <CardHeader bg={"#f9aea5"} py={2}>
+        <Heading size="md" color={"white"}>
+          MY {t("VE_YMT")}
+        </Heading>
       </CardHeader>
       <CardBody>
-        <Heading fontSize={"xl"}>
+        <Heading fontSize={"xl"} py={2}>
           {t("VE_YMT")}
           <Tooltip
             hasArrow

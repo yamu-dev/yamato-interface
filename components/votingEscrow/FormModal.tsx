@@ -26,7 +26,6 @@ import { DatePicker, CustomProvider } from "rsuite";
 import { useTranslation } from "react-i18next";
 import { jaJP, enUS } from "rsuite/locales";
 import "rsuite/dist/rsuite-no-reset.min.css";
-// import "src/css/rsuite-override.css";
 
 type FormModalProps = {
   address?: `0x${string}`;
@@ -44,10 +43,6 @@ export default function FormModal({
   const { colorMode } = useColorMode();
   const locale = "ja"; // Mock locale
   const { t } = useTranslation();
-  const modalBackground = colorMode === "dark" ? "gray.700" : "white";
-  const textColor = colorMode === "dark" ? "white" : "gray.800";
-  const buttonBackground = colorMode === "dark" ? "gray.600" : "gray.100";
-  const buttonColor = colorMode === "dark" ? "white" : "gray.800";
 
   return (
     <>
@@ -92,9 +87,7 @@ export default function FormModal({
                           YMT
                         </Box>
                       </Flex>
-                      <Text color={"gray.400"} fontSize={"sm"}>
-                        {t("BALANCE")}: 0 YMT
-                      </Text>
+                      <Text fontSize={"sm"}>{t("BALANCE")}: 0 YMT</Text>
                     </FormControl>
                   </Box>
                 </HStack>

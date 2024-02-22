@@ -15,9 +15,7 @@ export default function Layout({
     <>
       <MetaTags />
       <Header title={title ? title : "VotingEscrow"} />
-      <Box bgImage="url('/background_main.webp')">
-        {children}
-      </Box>
+      <Box bgImage="url('/background_main.webp')">{children}</Box>
       <Footer />
     </>
   );

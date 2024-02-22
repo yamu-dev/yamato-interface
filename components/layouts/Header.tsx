@@ -20,7 +20,7 @@ export default function Header({ title }: HeaderProps) {
       position={"sticky"}
       top={"0"}
       zIndex={100}
-      bg={"rgb(252, 250, 242)"}
+      bg={"#fcfaf2"}
       opacity={0.975}
     >
       <Container maxW="container.2xl" px={{ base: 2, md: 4 }}>
