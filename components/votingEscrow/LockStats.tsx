@@ -8,28 +8,26 @@ export default function LockStats({ address }: { address?: `0x${string}` }) {
   return (
     <>
       <HStack justifyContent={"space-between"}>
-        <chakra.p color={"gray.400"}>{t("BALANCE")}</chakra.p>
-        <chakra.p fontSize={"2xl"} color={"white"}>
+        <chakra.p>{t("BALANCE")}</chakra.p>
+        <chakra.p fontSize={"2xl"}>
           <>{"0.0"}</>
-          <chakra.span color={"gray.400"} fontSize={"lg"} ml={1}>
+          <chakra.span fontSize={"lg"} ml={1}>
             veYMT
           </chakra.span>
         </chakra.p>
       </HStack>
       <HStack justifyContent={"space-between"} mt={1}>
-        <chakra.p color={"gray.400"}>{t("YMT_LOCKED")}</chakra.p>
-        <chakra.p fontSize={"2xl"} color={"white"}>
+        <chakra.p>{t("YMT_LOCKED")}</chakra.p>
+        <chakra.p fontSize={"2xl"}>
           <>{"0.0"}</>
-          <chakra.span color={"gray.400"} fontSize={"lg"} ml={1}>
+          <chakra.span fontSize={"lg"} ml={1}>
             YMT
           </chakra.span>
         </chakra.p>
       </HStack>
       <HStack justifyContent={"space-between"} mt={1}>
-        <chakra.p color={"gray.400"}>{t("LOCKED_UNTIL")}</chakra.p>
-        <chakra.p fontSize={"2xl"} color={"white"}>
-          {"-- / -- / --"}
-        </chakra.p>
+        <chakra.p>{t("LOCKED_UNTIL")}</chakra.p>
+        <chakra.p fontSize={"2xl"}>{"-- / -- / --"}</chakra.p>
       </HStack>
 
       <HStack spacing={4} justifyContent={"flex-end"} mt={2}>
