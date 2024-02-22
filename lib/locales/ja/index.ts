@@ -1,4 +1,4 @@
-export default {
+const ja = {
   APP_NAME: "VotingEscrow",
   APP_DESCRIPTION: "Web3",
   CLAIM: "請求",
@@ -33,3 +33,4 @@ export default {
   INPUT_LOCK_AMOUNT: "ロック額",
   SELECT_UNLOCK_DATE: "ロック期間を選択",
 };
+export default ja;
