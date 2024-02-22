@@ -10,9 +10,9 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 import { AiFillGithub } from "react-icons/ai";
-import gitbook from "public/gitbook.svg";
 import { useTranslation } from "react-i18next";
-import SvgCommunityLogoBlack from "../svgs/CommunityLogoBlack";
+import SvgCommunityLogoBlack from "../svgs/CommunityLogo";
+import GitBook from "../svgs/gitbook";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -23,7 +23,7 @@ export default function Footer() {
       pb={4}
       top={"0"}
       zIndex={100}
-      bg={"gray.900"}
+      bg={"#fcfaf2"}
       opacity={0.975}
     >
       <Container maxW="container.2xl" px={{ base: 2, md: 4 }}>
@@ -48,7 +48,7 @@ export default function Footer() {
                 fontSize={"3xl"}
                 _hover={{ opacity: 0.8 }}
               >
-                <SvgCommunityLogoBlack width="2.5rem" height="2.5rem" />
+                <SvgCommunityLogoBlack width="2.5rem" height="2.5rem" fill="#818181" />
               </Link>
             </Tooltip>
             <Tooltip
@@ -62,7 +62,7 @@ export default function Footer() {
                 _hover={{ opacity: 0.8 }}
                 padding={"0.3125rem"}
               >
-                <AiFillGithub color={"#FFFFFF"} />
+                <AiFillGithub fill="#818181" />
               </Link>
             </Tooltip>
             <Tooltip
@@ -76,7 +76,7 @@ export default function Footer() {
                 _hover={{ opacity: 0.8 }}
                 padding={"0.3125rem"}
               >
-                <Image w={"30px"} h={"30px"} src={gitbook.src} />
+                <GitBook width="2.5rem" height="2.5rem" fill="#818181" />
               </Link>
             </Tooltip>
           </Flex>
@@ -94,7 +94,7 @@ export default function Footer() {
             </Select>
           </Box>
         </Flex>
-        <Flex justifyContent={"center"} fontSize={"sm"} color={"gray.400"}>
+        <Flex justifyContent={"center"} fontSize={"sm"}>
           © DeFiGeek Community JAPAN
         </Flex>
       </Container>

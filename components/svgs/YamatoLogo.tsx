@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function SvgYamatoLogo(props: React.SVGProps<SVGSVGElement>) {
+function YamatoLogo(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={12572.684}
@@ -68,4 +68,4 @@ function SvgYamatoLogo(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default SvgYamatoLogo;
+export default YamatoLogo;
