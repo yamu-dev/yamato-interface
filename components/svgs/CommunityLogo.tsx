@@ -1,4 +1,4 @@
-function SvgCommunityLogoBlack(props: any) {
+function CommunityLogo(props: any) {
   return (
     <svg
       width={1500}
@@ -17,4 +17,4 @@ function SvgCommunityLogoBlack(props: any) {
   );
 }
 
-export default SvgCommunityLogoBlack;
+export default CommunityLogo;

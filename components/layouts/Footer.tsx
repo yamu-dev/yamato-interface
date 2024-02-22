@@ -11,8 +11,8 @@ import {
 } from "@chakra-ui/react";
 import { AiFillGithub } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
-import SvgCommunityLogoBlack from "../svgs/CommunityLogo";
-import GitBook from "../svgs/gitbook";
+import CommunityLogo from "../svgs/CommunityLogo";
+import GitBook from "../svgs/GitBook";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -48,7 +48,11 @@ export default function Footer() {
                 fontSize={"3xl"}
                 _hover={{ opacity: 0.8 }}
               >
-                <SvgCommunityLogoBlack width="2.5rem" height="2.5rem" fill="#818181" />
+                <CommunityLogo
+                  width="2.5rem"
+                  height="2.5rem"
+                  fill="#818181"
+                />
               </Link>
             </Tooltip>
             <Tooltip
