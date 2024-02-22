@@ -7,7 +7,6 @@ import Big, {
   getBigNumber,
 } from "./bignumber";
 
-
 export const calculateAllocation = (us: Big, tp: Big, tda: Big): Big => {
   let al = us.mul(tda).div(tp);
   return al.round(0, 0);

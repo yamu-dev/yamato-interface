@@ -16,7 +16,7 @@ createWeb3Modal({
   wagmiConfig: config,
   themeMode: "dark",
   projectId: projectId,
-  enableAnalytics: false, // Optional - defaults to your Cloud configuration
+  enableAnalytics: false,
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider>
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
-          <ColorModeScript initialColorMode={"dark"} />
+          <ColorModeScript initialColorMode={"light"} />
           <Component {...pageProps} />
         </QueryClientProvider>
       </WagmiProvider>
