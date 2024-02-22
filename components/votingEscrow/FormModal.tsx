@@ -23,7 +23,10 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { DatePicker, CustomProvider } from "rsuite";
+import { useTranslation } from "react-i18next";
 import { jaJP, enUS } from "rsuite/locales";
+import "rsuite/dist/rsuite-no-reset.min.css";
+// import "src/css/rsuite-override.css";
 
 type FormModalProps = {
   address?: `0x${string}`;
@@ -40,7 +43,11 @@ export default function FormModal({
 }: FormModalProps) {
   const { colorMode } = useColorMode();
   const locale = "ja"; // Mock locale
-  const t = (key: string) => key; // Mock translation function
+  const { t } = useTranslation();
+  const modalBackground = colorMode === "dark" ? "gray.700" : "white";
+  const textColor = colorMode === "dark" ? "white" : "gray.800";
+  const buttonBackground = colorMode === "dark" ? "gray.600" : "gray.100";
+  const buttonColor = colorMode === "dark" ? "white" : "gray.800";
 
   return (
     <>
@@ -51,7 +58,7 @@ export default function FormModal({
           closeOnOverlayClick={false}
           blockScrollOnMount={false}
           isCentered={true}
-          size={"xs"}
+          size={"sm"}
         >
           <ModalOverlay />
           <ModalContent>
@@ -64,7 +71,7 @@ export default function FormModal({
                     <FormControl mt={4}>
                       <Flex justifyContent={"space-between"}>
                         <FormLabel alignItems={"baseline"}>
-                          INPUT_LOCK_AMOUNT
+                          {t("INPUT_LOCK_AMOUNT")}{" "}
                         </FormLabel>
                       </Flex>
 
@@ -82,11 +89,11 @@ export default function FormModal({
                           </NumberInputStepper>
                         </NumberInput>
                         <Box px={2} minW={"3rem"}>
-                          YMWK
+                          YMT
                         </Box>
                       </Flex>
                       <Text color={"gray.400"} fontSize={"sm"}>
-                        BALANCE: 0 YMWK
+                        {t("BALANCE")}: 0 YMT
                       </Text>
                     </FormControl>
                   </Box>
@@ -94,7 +101,7 @@ export default function FormModal({
 
                 <FormControl mt={4}>
                   <FormLabel alignItems={"baseline"}>
-                    SELECT_UNLOCK_DATE
+                    {t("SELECT_UNLOCK_DATE")}
                   </FormLabel>
                   <Flex alignItems={"center"}>
                     <Box>
@@ -157,7 +164,7 @@ export default function FormModal({
                   colorScheme="green"
                   type="submit"
                 >
-                  {type}
+                  {t("VE_CREATE_LOCK")}
                 </Button>
               </form>
             </ModalBody>
