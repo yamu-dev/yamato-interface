@@ -48,11 +48,7 @@ export default function Footer() {
                 fontSize={"3xl"}
                 _hover={{ opacity: 0.8 }}
               >
-                <CommunityLogo
-                  width="2.5rem"
-                  height="2.5rem"
-                  fill="#818181"
-                />
+                <CommunityLogo width="2.5rem" height="2.5rem" fill="#818181" />
               </Link>
             </Tooltip>
             <Tooltip

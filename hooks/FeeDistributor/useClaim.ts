@@ -5,7 +5,6 @@ import {
 } from "wagmi";
 import { veSystemAbis } from "lib/constants/abi";
 
-
 export default function useClaim({
   address,
   token,
