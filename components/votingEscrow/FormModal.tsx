@@ -26,6 +26,7 @@ import { DatePicker, CustomProvider } from "rsuite";
 import { useTranslation } from "react-i18next";
 import { jaJP, enUS } from "rsuite/locales";
 import "rsuite/dist/rsuite-no-reset.min.css";
+import { CustomButton } from "components/shared/CustomButton";
 
 type FormModalProps = {
   address?: `0x${string}`;
@@ -57,8 +58,11 @@ export default function FormModal({
         >
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>{type}</ModalHeader>
-            <ModalCloseButton />
+            <ModalHeader>
+              {type}
+              <ModalCloseButton />
+            </ModalHeader>
+
             <ModalBody pb={6}>
               <form>
                 <HStack spacing={8} alignItems={"start"}>
@@ -150,15 +154,14 @@ export default function FormModal({
                   </Grid>
                 </FormControl>
 
-                <Button
+                <CustomButton
                   mt={4}
                   w={"full"}
                   variant="solid"
                   colorScheme="green"
-                  type="submit"
                 >
                   {t("VE_CREATE_LOCK")}
-                </Button>
+                </CustomButton>
               </form>
             </ModalBody>
           </ModalContent>
