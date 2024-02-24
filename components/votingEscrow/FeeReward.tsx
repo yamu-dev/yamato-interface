@@ -1,6 +1,6 @@
 import { Button, HStack, Box, chakra } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { zeroAddress } from "viem";
+import { CustomButton } from "components/shared/CustomButton";
 
 export default function Reward({
   address,
@@ -19,9 +19,15 @@ export default function Reward({
           {"ETH"}
         </chakra.span>
       </Box>
-      <Button variant={"solid"} colorScheme="green" size={"sm"}>
+      <CustomButton
+        variant={"solid"}
+        size={"sm"}
+        onClick={() => {
+          console.log("aaa");
+        }}
+      >
         {t("CLAIM")}
-      </Button>
+      </CustomButton>
     </HStack>
   );
 }

@@ -1,6 +1,7 @@
 import {
   Button,
   Card,
+  CardHeader,
   CardBody,
   Heading,
   Tooltip,
@@ -12,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { QuestionIcon } from "@chakra-ui/icons";
 import { useTranslation } from "react-i18next";
+import { CustomButton } from "components/shared/CustomButton";
 
 export default function EarlyUserReward({
   address,
@@ -31,8 +33,13 @@ export default function EarlyUserReward({
       }}
       color={"#818181"}
     >
+      <CardHeader bg={"#f9aea5"} py={2}>
+        <Heading size="md" color={"white"}>
+          Reward
+        </Heading>
+      </CardHeader>
       <CardBody>
-        <Heading fontSize={"xl"}>
+        <Heading fontSize={"xl"} pb={1}>
           {t("EARLY_USER_REWARD")}
           <Tooltip
             hasArrow
@@ -43,7 +50,7 @@ export default function EarlyUserReward({
             <QuestionIcon fontSize={"md"} mb={1} ml={1} />
           </Tooltip>
         </Heading>
-        <Divider mt={2} mb={4} />
+        <Divider my={2} />
         <HStack justifyContent={"space-between"}>
           <chakra.div>{t("CLAIMABLE")}</chakra.div>
           <chakra.div fontSize={"2xl"}>
@@ -55,9 +62,7 @@ export default function EarlyUserReward({
         </HStack>
       </CardBody>
       <CardFooter pt={0} justifyContent={"flex-end"}>
-        <Button variant={"solid"} colorScheme="green">
-          {t("CLAIM")}
-        </Button>
+        <CustomButton size={"sm"}>{t("CLAIM")}</CustomButton>
       </CardFooter>
     </Card>
   );

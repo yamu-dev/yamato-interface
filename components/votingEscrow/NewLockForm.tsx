@@ -2,6 +2,7 @@ import { ButtonProps, Button, useDisclosure } from "@chakra-ui/react";
 import { LockType } from "lib/types/VotingEscrow";
 import { useTranslation } from "react-i18next";
 import FormModal from "./FormModal";
+import { CustomButton } from "components/shared/CustomButton";
 
 export default function NewLockForm({
   address,
@@ -12,15 +13,9 @@ export default function NewLockForm({
 
   return (
     <>
-      <Button
-        variant={"solid"}
-        colorScheme="green"
-        size={"sm"}
-        onClick={onOpen}
-        {...props}
-      >
+      <CustomButton variant={"solid"} size={"sm"} onClick={onOpen} {...props}>
         {t("VE_CREATE_LOCK")}
-      </Button>
+      </CustomButton>
       {isOpen && (
         <FormModal
           address={address}
