@@ -9,7 +9,7 @@ export default function AccountDashboard() {
 
   return (
     <Layout>
-      <Container maxW="container.xl" py={16}>
+      <Container maxW="container.xl" py={10}>
         <Center>
           <VotingEscrow address={account.address} />
         </Center>

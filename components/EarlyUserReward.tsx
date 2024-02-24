@@ -23,7 +23,7 @@ export default function EarlyUserReward({
   return (
     <Card
       flex={1}
-      maxW="lg"
+      maxW="xl"
       bg={"#fcfaf2"}
       style={{
         boxShadow: "rgba(0, 0, 0, 0.25) 3px 3px 0px",
