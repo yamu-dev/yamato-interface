@@ -12,7 +12,7 @@ const ja = {
   VE_YMT: "veYMT",
   VE_YMT_REWARD: "veYMTリワード",
   VE_YMT_REWARD_HELP:
-    "YMTトークンを一定期間ロックすることで、移転不可のveYMTトークンを発行します。ロック期間の最小単位は1週間、最大期間は52週間(≒ 4年間)で、ロックしたYMTトークンはロック期間終了まで引き出しできません。\n1YMTを4年間ロックすると1veYMTが発行され、時間経過により線形に減衰し、4年後に0veYMTになります。週は毎週木曜日0時(UTC)を起点として計算されます。",
+    "YMTトークンを一定期間ロックすることで、移転不可のveYMTトークンを発行します。ロック期間の最小単位は1週間、最大期間は52週間(≒ 4年間)で、ロックしたYMTトークンはロック期間終了まで引き出しできません。\n1YMTを4年間ロックすると1veYMTが発行され、時間経過により線形に減衰し、4年後に0veYMTになります。",
   YMT_LOCKED: "ロック中のYMT",
   LOCKED_UNTIL: "ロック終了日時",
   REWARDS: "リワード",
@@ -32,5 +32,10 @@ const ja = {
   VE_WITHDRAW: "引き出す",
   INPUT_LOCK_AMOUNT: "ロック額",
   SELECT_UNLOCK_DATE: "ロック期間を選択",
+
+  TOTAL_YMT: "YMT総供給量",
+  TOTAL_YMT_VOTE_LOCKED: "投票ロックされたYMTの合計",
+  PERCENTAGE_YMT_LOCKED: "YMTロックの割合",
+  TOTAL_VE_YMT: "veYMTの合計",
 };
 export default ja;
