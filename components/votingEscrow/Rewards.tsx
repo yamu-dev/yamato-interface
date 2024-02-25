@@ -12,6 +12,7 @@ import {
 import { QuestionIcon } from "@chakra-ui/icons";
 import { useTranslation } from "react-i18next";
 import FeeRewards from "components/votingEscrow/FeeReward";
+import { CustomButton } from "components/shared/CustomButton";
 
 export default function Reward({ address }: { address?: `0x${string}` }) {
   const { t } = useTranslation();
@@ -37,9 +38,9 @@ export default function Reward({ address }: { address?: `0x${string}` }) {
                 YMT
               </chakra.span>
             </Box>
-            <Button variant={"solid"} colorScheme="green" size={"sm"}>
+            <CustomButton variant={"solid"} size={"sm"}>
               {t("CLAIM")}
-            </Button>
+            </CustomButton>
           </HStack>
           <FeeRewards />
         </VStack>

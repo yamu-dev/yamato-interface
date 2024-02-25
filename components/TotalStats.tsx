@@ -49,6 +49,15 @@ export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
         </Heading>
         <Divider variant="dashed" my={2} />
         <HStack justifyContent={"space-between"}>
+          <chakra.p>{t("TOTAL_YMT")}</chakra.p>
+          <chakra.p fontSize={"2xl"}>
+            <>{"0.0"}</>
+            <chakra.span fontSize={"lg"} ml={1}>
+              YMT
+            </chakra.span>
+          </chakra.p>
+        </HStack>
+        <HStack justifyContent={"space-between"}>
           <chakra.p>{t("TOTAL_YMT_VOTE_LOCKED")}</chakra.p>
           <chakra.p fontSize={"2xl"}>
             <>{"0.0"}</>
