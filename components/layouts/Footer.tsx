@@ -12,7 +12,7 @@ import {
 import { AiFillGithub } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
 import CommunityLogo from "../svgs/CommunityLogo";
-import GitBook from "../svgs/GitBook";
+import GitBook from "../svgs/gitbook";
 
 export default function Footer() {
   const { t } = useTranslation();
