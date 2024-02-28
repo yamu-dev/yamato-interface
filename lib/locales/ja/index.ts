@@ -37,5 +37,15 @@ const ja = {
   TOTAL_YMT_VOTE_LOCKED: "投票ロックされたYMTの合計",
   PERCENTAGE_YMT_LOCKED: "YMTロックの割合",
   TOTAL_VE_YMT: "veYMTの合計",
+
+
+
+
+  // TODO yamu
+  YAMATO_STATISTICS_HELP: "用語解説\nTVL: 総預入額(Total Value Locked)\nTCR: 総担保比率(Total Collateral Ratio)",
+  DASHBOARD_PRICE: "価格",
+  YDASHBOARD_TOTALS: "総発行量",
+  DASHBOARD_INTERMARKETPRICEVARIANCE: "市場間価格差異"
 };
 export default ja;
+
