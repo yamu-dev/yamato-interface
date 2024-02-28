@@ -16,7 +16,8 @@ import {
   Link,
   Flex,
   Spacer,
-  Box
+  Box,
+  Avatar
 } from "@chakra-ui/react";
 import {
   CategoryTitle,
@@ -191,7 +192,7 @@ export default function YamatoStatistics({
 
 
     
-    <Card
+    {/* <Card
       flex={1}
       maxW="5xl"
       bg={"#fcfaf2"}
@@ -254,7 +255,42 @@ export default function YamatoStatistics({
             </VStack>
           </HStack>
         </CardBody>
-      </Card>
+      </Card> */}
+      <Flex w="full" h="160px" bg="blue.50" rounded="xl" boxShadow="md" mb="2">
+      <Flex align="center" w="20%">
+        <Avatar size="xl" mx="auto" src="https://bit.ly/kent-c-dodds" />
+      </Flex>
+      <Box
+        w="70%"
+        bgPosition="right"
+        bgSize="220px"
+        bgRepeat="no-repeat"
+        mr="4"
+      >
+        <Flex align="center" my="5">
+          <Heading pr="4" fontSize="2xl" color="gray.600">
+            Daisuke Matsuura
+          </Heading>
+        </Flex>
+        <Flex mb="3" color="gray.500">
+          <Flex align="center" w="35%">
+            <Text pl="2">Osaka, JAPAN</Text>
+          </Flex>
+          <Flex align="center">
+            <Text pl="2">1800+ connection </Text>
+          </Flex>
+        </Flex>
+        <Flex mb="5" color="gray.500">
+          <Flex align="center" w="35%">
+            <Text pl="2">https://biz.can-ly.com/</Text>
+          </Flex>
+          <Flex align="center">
+            <Text pl="2">Canly Co.,Ltd </Text>
+          </Flex>
+        </Flex>
+      </Box>
+    </Flex>
+
       </>
   );
 }
