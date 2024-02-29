@@ -30,6 +30,7 @@ import { QuestionIcon } from "@chakra-ui/icons";
 import { useTranslation } from "react-i18next";
 import { CustomButton } from "components/shared/CustomButton";
 import { formatPrice } from '../../lib/utils/prices';
+import DashboardItem from "./Item";
 // import { StyledTooltip } from "components/shared/StyledTooltip";
 
 
@@ -71,10 +72,10 @@ export default function YamatoStatistics({
     firstLoadCompleted,
   // } = useYamatoStateForDashboard({"address": address});
   } = {
-    tvl: 0,
-    tcr: 0,
-    rateOfEthJpy: 0,
-    totalSupplyOfCjpy: 0,
+    tvl: 387828799.0242,
+    tcr: 420,
+    rateOfEthJpy: 513014,
+    totalSupplyOfCjpy: 92274777.3888,
     rateOfCjpyJpy: [],
     firstLoadCompleted: true,
   };
@@ -86,6 +87,14 @@ export default function YamatoStatistics({
   //   () => (chainId != null ? CJPY_ADDRESSES[chainId] : ''),
   //   [chainId]
   // );
+
+  const YAMATO_SYMBOL = {
+    COLLATERAL: 'ETH',
+    YEN: 'CJPY',
+    GOVERNANCE: 'YMT',
+    GOVERNANCE_LOCK: 'veYMT',
+    TXJP: 'TXJP',
+  };
 
   const getExternalLink = useCallback(
     (exchangeName: string) => {
@@ -256,7 +265,77 @@ export default function YamatoStatistics({
           </HStack>
         </CardBody>
       </Card> */}
-      <Flex w="full" h="160px" bg="blue.50" rounded="xl" boxShadow="md" mb="2">
+
+<Card
+      flex={1}
+      maxW="5xl"
+      bg={"#fcfaf2"}
+      style={{
+        boxShadow: "rgba(0, 0, 0, 0.25) 3px 3px 0px",
+        borderRadius: "0px",
+      }}
+      color={"#818181"}
+    >
+      <CardHeader bg={"#f9aea5"} py={2}>
+        <Heading size="md" color={"white"}>
+          Yamato Statistics
+          <Tooltip
+            hasArrow
+            label={
+              <Text whiteSpace={"pre-wrap"}>{t("YAMATO_STATISTICS_HELP")}</Text>
+            }
+          >
+            <QuestionIcon fontSize={"md"} mb={1} ml={1} />
+          </Tooltip>
+        </Heading>
+        </CardHeader>
+        <CardBody>
+        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+              <DashboardItem
+                title={'TVL'}
+                stat={`¥${formatPrice(tvl, 'jpy').value}`}
+                firstLoadCompleted={firstLoadCompleted}
+            />
+                          <DashboardItem
+                title={'ETH' + t('DASHBOARD_PRICE')}
+                stat={`¥${formatPrice(rateOfEthJpy, 'jpy').value}`}
+                firstLoadCompleted={firstLoadCompleted}
+              />
+
+              <DashboardItem
+                title={'TCR'}
+                stat={`${tcr.toLocaleString(undefined, {
+                  maximumFractionDigits: 2,
+                })}%`}
+                firstLoadCompleted={firstLoadCompleted}
+            />
+                          <DashboardItem
+                title={'CJPY' + t('YDASHBOARD_TOTALS')}
+                stat={`${formatPrice(totalSupplyOfCjpy, 'jpy').value} ${
+                  YAMATO_SYMBOL.YEN
+                }`}
+                firstLoadCompleted={firstLoadCompleted}
+              />
+
+              <DashboardItem
+                title={t('DASHBOARD_INTERMARKETPRICEVARIANCE')}
+                stat={`${getMarketRateOfCjpyJpy(rateOfCjpyJpy[0])}
+                (${getDeviationRate(rateOfCjpyJpy[0])})`}
+                firstLoadCompleted={firstLoadCompleted}
+              >
+                {rateOfCjpyJpy[0] && (
+                  <Link href={getExternalLink(rateOfCjpyJpy[0][0])}>
+                  </Link>
+                )}
+              </DashboardItem>
+
+        </Grid>
+        </CardBody>
+      </Card>
+
+      
+
+      {/* <Flex w="full" h="160px" bg="blue.50" rounded="xl" boxShadow="md" mb="2">
       <Flex align="center" w="20%">
         <Avatar size="xl" mx="auto" src="https://bit.ly/kent-c-dodds" />
       </Flex>
@@ -289,7 +368,7 @@ export default function YamatoStatistics({
           </Flex>
         </Flex>
       </Box>
-    </Flex>
+    </Flex> */}
 
       </>
   );
