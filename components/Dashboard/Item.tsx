@@ -8,29 +8,28 @@ interface Props {
   children?: any;
 }
 
-// export default function DashboardItem(props: Props) {
-//   return (
-//     <HStack justifyContent={"space-between"}>
-//       <Box width="10rem">{props.title}</Box>
-//       {props.firstLoadCompleted ? (
-//         <Box width="5rem">
-//           {props.stat}
-//           {props.children}
-//         </Box>
-//       ) : (
-//         <Skeleton width="20rem" height="1.6rem" />
-//       )}
-//     </HStack>
-//   );
-// }
-
-
-export default function DashboardItem(props: Props) {
+export function DashboardItem(props: Props) {
   return (
     <HStack justifyContent={"space-between"}>
       <Box>{props.title}</Box>
       {props.firstLoadCompleted ? (
         <Box width='15rem'>
+          {props.stat}
+          {props.children}
+        </Box>
+      ) : (
+        <Skeleton width="20rem" height="1.6rem" />
+      )}
+    </HStack>
+  );
+}
+
+export function DashboardItemForDevice(props: Props) {
+  return (
+    <HStack justifyContent={"space-between"}>
+      <Box>{props.title}</Box>
+      {props.firstLoadCompleted ? (
+        <Box>
           {props.stat}
           {props.children}
         </Box>

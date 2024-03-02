@@ -9,9 +9,12 @@ import {
   chakra,
   Text,
   Image,
+  Grid,
+  Box
 } from "@chakra-ui/react";
 import { QuestionIcon } from "@chakra-ui/icons";
 import { useTranslation } from "react-i18next";
+import { DashboardItem } from "./Dashboard/Item";
 
 export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
   const { t } = useTranslation();
@@ -19,7 +22,7 @@ export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
   return (
     <Card
       flex={1}
-      maxW="xl"
+      maxW="5xl"
       bg={"#fcfaf2"}
       style={{
         boxShadow: "rgba(0, 0, 0, 0.25) 3px 3px 0px",
@@ -27,37 +30,27 @@ export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
       }}
       color={"#818181"}
     >
-      <CardHeader bg={"#5bad92"} py={2}>
+      <CardHeader bg={"#F9AEA5"} py={2}>
         <Heading size="md" color={"white"}>
-          Total YMT Overview
+          My Pledge
         </Heading>
       </CardHeader>
       <CardBody>
-        <Heading fontSize={"xl"} pb={1}>
-          <HStack>
-            <Image src="/logo192.png" alt="Logo" boxSize="24px" />
-            <Text>{t("VE_YMT")}</Text>
-            <Tooltip
-              hasArrow
-              label={
-                <Text whiteSpace={"pre-wrap"}>{t("VE_YMT_REWARD_HELP")}</Text>
-              }
-            >
-              <QuestionIcon fontSize={"lg"} cursor="help" />
-            </Tooltip>
-          </HStack>
-        </Heading>
-        <Divider variant="dashed" my={2} />
-        <HStack justifyContent={"space-between"}>
-          <chakra.p>{t("TOTAL_YMT")}</chakra.p>
-          <chakra.p fontSize={"2xl"}>
-            <>{"0.0"}</>
-            <chakra.span fontSize={"lg"} ml={1}>
-              YMT
-            </chakra.span>
-          </chakra.p>
+        <HStack>
+          <Box>担保量</Box>
+          <Box>　　　　0 ETH</Box>
         </HStack>
-        <HStack justifyContent={"space-between"}>
+        <HStack>
+          <Box>評価額</Box>
+          <Box>　　　　¥0.0</Box>
+        </HStack>
+
+        {/* <DashboardItem
+          title={'評価額'}
+          stat={`¥0.0`}
+          firstLoadCompleted={true}
+        /> */}
+        {/* <HStack justifyContent={"space-between"}>
           <chakra.p>{t("TOTAL_YMT_VOTE_LOCKED")}</chakra.p>
           <chakra.p fontSize={"2xl"}>
             <>{"0.0"}</>
@@ -83,7 +76,7 @@ export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
               veYMT
             </chakra.span>
           </chakra.p>
-        </HStack>
+        </HStack> */}
       </CardBody>
     </Card>
   );

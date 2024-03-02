@@ -27,11 +27,11 @@ import {
   ItemTitleValue,
 } from '../CommonItem';
 import { useCallback, useMemo } from 'react';
-import { QuestionIcon } from "@chakra-ui/icons";
+import { LinkIcon, QuestionIcon } from "@chakra-ui/icons";
 import { useTranslation } from "react-i18next";
 import { CustomButton } from "components/shared/CustomButton";
 import { formatPrice } from '../../lib/utils/prices';
-import DashboardItem from "./Item";
+import { DashboardItem, DashboardItemForDevice } from "./Item";
 // import { StyledTooltip } from "components/shared/StyledTooltip";
 
 
@@ -122,7 +122,7 @@ export default function YamatoStatistics({
           }}
           color={"#818181"}
         >
-          <CardHeader bg={"#f9aea5"} py={2}>
+          <CardHeader bg={"#5bad92"} py={2}>
             <Heading size="md" color={"white"}>
               Yamato Statistics
               <Tooltip
@@ -186,7 +186,7 @@ export default function YamatoStatistics({
           }}
           color={"#818181"}
         >
-          <CardHeader bg={"#f9aea5"} py={2}>
+          <CardHeader bg={"#5bad92"} py={2}>
             <Heading size="md" color={"white"}>
               Yamato Statistics
               <Tooltip
@@ -200,32 +200,32 @@ export default function YamatoStatistics({
             </Heading>
           </CardHeader>
           <CardBody>
-            <DashboardItem
+            <DashboardItemForDevice
               title={'TVL'}
               stat={`¥${formatPrice(tvl, 'jpy').value}`}
               firstLoadCompleted={firstLoadCompleted}
             />
-            <DashboardItem
+            <DashboardItemForDevice
               title={'ETH' + t('DASHBOARD_PRICE')}
               stat={`¥${formatPrice(rateOfEthJpy, 'jpy').value}`}
               firstLoadCompleted={firstLoadCompleted}
             />
 
-            <DashboardItem
+            <DashboardItemForDevice
               title={'TCR'}
               stat={`${tcr.toLocaleString(undefined, {
                 maximumFractionDigits: 2,
               })}%`}
               firstLoadCompleted={firstLoadCompleted}
             />
-            <DashboardItem
+            <DashboardItemForDevice
               title={'CJPY' + t('YDASHBOARD_TOTALS')}
               stat={`${formatPrice(totalSupplyOfCjpy, 'jpy').value} ${YAMATO_SYMBOL.YEN
                 }`}
               firstLoadCompleted={firstLoadCompleted}
             />
 
-            <DashboardItem
+            <DashboardItemForDevice
               title={t('DASHBOARD_INTERMARKETPRICEVARIANCE')}
               stat={`${getMarketRateOfCjpyJpy(rateOfCjpyJpy[0])}
                 (${getDeviationRate(rateOfCjpyJpy[0])})`}
@@ -235,7 +235,7 @@ export default function YamatoStatistics({
                 <Link href={getExternalLink(rateOfCjpyJpy[0][0])}>
                 </Link>
               )}
-            </DashboardItem>
+            </DashboardItemForDevice>
           </CardBody>
         </Card>)}
 
