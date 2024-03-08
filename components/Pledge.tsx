@@ -16,7 +16,7 @@ import { QuestionIcon } from "@chakra-ui/icons";
 import { useTranslation } from "react-i18next";
 import { DashboardItem } from "./Dashboard/Item";
 
-export default function VotingEscrow({ address }: { address?: `0x${string}` }) {
+export default function Pledge({ address }: { address?: `0x${string}` }) {
   const { t } = useTranslation();
 
   return (
