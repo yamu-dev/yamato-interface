@@ -128,7 +128,7 @@ export default function YamatoStatistics({
               <Tooltip
                 hasArrow
                 label={
-                  <Text whiteSpace={"pre-wrap"}>{t("YAMATO_STATISTICS_HELP")}</Text>
+                  <Text whiteSpace={"pre-wrap"}>{t("dashboard.yamatoStatisticsHelp")}</Text>
                 }
               >
                 <QuestionIcon fontSize={"md"} mb={1} ml={1} />
@@ -143,7 +143,7 @@ export default function YamatoStatistics({
                 firstLoadCompleted={firstLoadCompleted}
               />
               <DashboardItem
-                title={'ETH' + t('DASHBOARD_PRICE')}
+                title={'ETH' + t('dashboard.price')}
                 stat={`¥${formatPrice(rateOfEthJpy, 'jpy').value}`}
                 firstLoadCompleted={firstLoadCompleted}
               />
@@ -156,14 +156,14 @@ export default function YamatoStatistics({
                 firstLoadCompleted={firstLoadCompleted}
               />
               <DashboardItem
-                title={'CJPY' + t('YDASHBOARD_TOTALS')}
+                title={'CJPY' + t('dashboard.totalSupply')}
                 stat={`${formatPrice(totalSupplyOfCjpy, 'jpy').value} ${YAMATO_SYMBOL.YEN
                   }`}
                 firstLoadCompleted={firstLoadCompleted}
               />
 
               <DashboardItem
-                title={t('DASHBOARD_INTERMARKETPRICEVARIANCE')}
+                title={t('dashboard.intermarketPriceVariance')}
                 stat={`${getMarketRateOfCjpyJpy(rateOfCjpyJpy[0])}
                 (${getDeviationRate(rateOfCjpyJpy[0])})`}
                 firstLoadCompleted={firstLoadCompleted}
@@ -192,7 +192,7 @@ export default function YamatoStatistics({
               <Tooltip
                 hasArrow
                 label={
-                  <Text whiteSpace={"pre-wrap"}>{t("YAMATO_STATISTICS_HELP")}</Text>
+                  <Text whiteSpace={"pre-wrap"}>{t("dashboard.yamatoStatisticsHelp")}</Text>
                 }
               >
                 <QuestionIcon fontSize={"md"} mb={1} ml={1} />
@@ -206,7 +206,7 @@ export default function YamatoStatistics({
               firstLoadCompleted={firstLoadCompleted}
             />
             <DashboardItemForDevice
-              title={'ETH' + t('DASHBOARD_PRICE')}
+              title={'ETH' + t('dashboard.price')}
               stat={`¥${formatPrice(rateOfEthJpy, 'jpy').value}`}
               firstLoadCompleted={firstLoadCompleted}
             />
@@ -219,14 +219,14 @@ export default function YamatoStatistics({
               firstLoadCompleted={firstLoadCompleted}
             />
             <DashboardItemForDevice
-              title={'CJPY' + t('YDASHBOARD_TOTALS')}
+              title={'CJPY' + t('dashboard.totalSupply')}
               stat={`${formatPrice(totalSupplyOfCjpy, 'jpy').value} ${YAMATO_SYMBOL.YEN
                 }`}
               firstLoadCompleted={firstLoadCompleted}
             />
 
             <DashboardItemForDevice
-              title={t('DASHBOARD_INTERMARKETPRICEVARIANCE')}
+              title={t('dashboard.intermarketPriceVariance')}
               stat={`${getMarketRateOfCjpyJpy(rateOfCjpyJpy[0])}
                 (${getDeviationRate(rateOfCjpyJpy[0])})`}
               firstLoadCompleted={firstLoadCompleted}

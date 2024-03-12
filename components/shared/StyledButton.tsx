@@ -1,11 +1,11 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 
-export function CustomButton(
-  props: {
+const StyledButton: React.FC<
+  {
     isLoading?: boolean;
     children: string;
-  } & ButtonProps,
-) {
+  } & ButtonProps
+> = (props) => {
   return (
     <Button
       {...props}
@@ -23,4 +23,6 @@ export function CustomButton(
       {props.children}
     </Button>
   );
-}
+};
+
+export default StyledButton;

@@ -1,4 +1,4 @@
-const en = {
+{
   "dashboard": {
     "tvl": "TVL(Total Value Locked)",
     "tcr": "TCR(Total Collateral Ratio)",
@@ -20,41 +20,41 @@ const en = {
     "tool": "tool"
   },
   "pledge": {
-    "collateral": {
-      "alert1": "Connect your wallet. Or switch networks.",
-      "alert2": "Exceeded balance",
-      "alert3": "The minimum collateral amount is",
-      "alert4": "",
-      "alert5": "Deposit Amount is zero.",
-      "alert6": "Exceeds the collateral Balance.",
-      "depositAmountInput": "Deposit Amount",
-      "depositExecution": "Deposit",
-      "predictedFluctuation": "Predicted Fluctuation",
-      "collateralRate": "Collateral Rate",
-      "collateralBalance": "Collateral Balance",
-      "valuation": "Valuation",
-      "withdrawalAmountInput": "Withdrawal Amount",
-      "withdrawalExecution": "Withdrawal"
+    "collateral" : {
+      "alert1" : "Connect your wallet. Or switch networks.",
+      "alert2" : "Exceeded balance",
+      "alert3" : "The minimum collateral amount is",
+      "alert4" : "",
+      "alert5" : "Deposit Amount is zero.",
+      "alert6" : "Exceeds the collateral Balance.",
+      "depositAmountInput" : "Deposit Amount",
+      "depositExecution" : "Deposit",
+      "predictedFluctuation" : "Predicted Fluctuation",
+      "collateralRate" : "Collateral Rate",
+      "collateralBalance" : "Collateral Balance",
+      "valuation" : "Valuation",
+      "withdrawalAmountInput" : "Withdrawal Amount",
+      "withdrawalExecution" : "Withdrawal"
     },
     "debt": {
-      "alert1": "Connect your wallet. Or switch networks.",
-      "alert2": "Enter a numeric value.",
-      "alert3": "Lowest collateral rate",
-      "alert4": "% is required",
-      "alert5": "Exceeds the borrowing Amount.",
-      "alert6": "Exceeded balance",
-      "borrowAmountInput": "Borrow Amount",
-      "borrowExecution": "Borrow",
-      "receiptAmount": "Receipt Volume",
-      "fee": "Fee",
-      "feeRate": "Fee Rate",
-      "totalBorrowAmount": "Total Borrow Amount",
+      "alert1" : "Connect your wallet. Or switch networks.",
+      "alert2" : "Enter a numeric value.",
+      "alert3" : "Lowest collateral rate",
+      "alert4" : "% is required",
+      "alert5" : "Exceeds the borrowing Amount.",
+      "alert6" : "Exceeded balance",
+      "borrowAmountInput" : "Borrow Amount",
+      "borrowExecution" : "Borrow",
+      "receiptAmount" : "Receipt Volume",
+      "fee" : "Fee",
+      "feeRate" : "Fee Rate",
+      "totalBorrowAmount" : "Total Borrow Amount",
       "maximumBorrowableAmount": "Maximum Borrowable Amount",
-      "borrowBalance": "Borrow Balance",
-      "collateralRate": "Collateral Rate",
-      "repaymentAmountInput": "Repayment Amount",
-      "repaymentExecution": "Repayment",
-      "predictedFluctuation": "Predicted Fluctuation"
+      "borrowBalance" : "Borrow Balance",
+      "collateralRate" : "Collateral Rate",
+      "repaymentAmountInput" : "Repayment Amount",
+      "repaymentExecution" : "Repayment",
+      "predictedFluctuation" : "Predicted Fluctuation"
     }
   },
   "redemption": {
@@ -64,7 +64,7 @@ const en = {
       "totalPoolVolume": "Total Pool Volume",
       "totalContenderRedemption": "Total Contender Redemption",
       "executionRewardPrediction": "Execution Reward Prediction",
-      "redemptionExecution": " Redemption"
+      "redemptionExecution": " Redemption" 
     },
     "selfRedemption": {
       "alert1": "Connect your wallet. Or switch networks.",
@@ -151,14 +151,12 @@ const en = {
       "insufficientBorrowing": "Fees exceed the amount borrowed.",
       "notGoverner": "You are not a governor.",
       "notTester": "You are not a tester.",
-      "justReverted": "An unknown error has occurred. Or please switch networks.",
+      "justReverted":"An unknown error has occurred. Or please switch networks.",
       "walletRejected": "Transmission has been canceled.",
       "zeroInput": "Input value is 0. Or too small."
     },
     "ErrorToastConfig": {
       "title": "Transaction failed"
-    },
-    "appName": "Yamato Protocol Interface"
+    }
   }
-};
-export default en;
+}
