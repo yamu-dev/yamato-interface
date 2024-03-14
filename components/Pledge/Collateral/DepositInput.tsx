@@ -8,23 +8,20 @@ import { Formik, Form, Field, FormikHelpers, FieldProps } from 'formik';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MIN_COLLATERAL, YAMATO_SYMBOL } from '../../../constants/yamato';
-import { useActiveWeb3React } from '../../../hooks/web3';
-import { useDepositCallback } from '../../../hooks/yamato/useDepositCallback';
-import { useWalletState } from '../../../state/wallet/hooks';
-import { addToNum } from '../../../utils/bignumber';
-import { errorToast } from '../../../utils/errorToast';
-import {
-  formatCollateralizationRatio,
-  formatPrice,
-} from '../../../utils/prices';
+// import { useActiveWeb3React } from '../../../hooks/web3';
+// import { useDepositCallback } from '../../../hooks/yamato/useDepositCallback';
+// import { useWalletState } from '../../../state/wallet/hooks';
 import { CustomButton, CustomFormLabel, CustomInput } from '../../CommonItem';
+import { formatCollateralizationRatio, formatPrice } from 'lib/utils/prices';
+import { addToNum } from 'lib/utils/bignumber';
+import { useAccount } from 'wagmi';
 
 type Props = { collateral: number; debt: number; rateOfEthJpy: number };
 
 export default function DepositInput(props: Props) {
   const { collateral, debt, rateOfEthJpy } = props;
 
-  const { account } = useActiveWeb3React();
+  const account = useAccount();
   const { callback } = useDepositCallback();
   const { eth } = useWalletState();
 
@@ -145,9 +142,8 @@ export default function DepositInput(props: Props) {
             {deposit && deposit > 0 && (
               <VStack spacing={4} align="start">
                 <CustomFormLabel
-                  text={`${t('pledge.collateral.predictedFluctuation')} ${
-                    formatPrice(addToNum(collateral, deposit), 'jpy').value
-                  } ${YAMATO_SYMBOL.COLLATERAL}`}
+                  text={`${t('pledge.collateral.predictedFluctuation')} ${formatPrice(addToNum(collateral, deposit), 'jpy').value
+                    } ${YAMATO_SYMBOL.COLLATERAL}`}
                 />
                 <CustomFormLabel
                   text={`${t(
@@ -165,3 +161,17 @@ export default function DepositInput(props: Props) {
     </Formik>
   );
 }
+
+//// TODO: Please remove this function and use the errorToast from the lib/utils/toast.ts
+function errorToast(arg0: any) {
+  return;
+}
+
+function useDepositCallback(): { callback: any; } {
+  return { callback: null }
+}
+
+function useWalletState(): { eth: any; } {
+  return { eth: 0 }
+}
+

@@ -1,16 +1,13 @@
 import { Grid, GridItem, Skeleton } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { YAMATO_SYMBOL } from '../../../constants/yamato';
-import { usePledgeData } from '../../../state/pledge/hooks';
-import { useWalletState } from '../../../state/wallet/hooks';
-import { useYamatoStateForPledge } from '../../../state/yamato-entirety/hooks';
-import {
-  formatCollateralizationRatio,
-  formatPrice,
-} from '../../../utils/prices';
+// import { usePledgeData } from '../../../state/pledge/hooks';
+// import { useWalletState } from '../../../state/wallet/hooks';
+// import { useYamatoStateForPledge } from '../../../state/yamato-entirety/hooks';
 import { ItemTitleValue, ItemTitleForPledge } from '../../CommonItem';
 import BorrowInput from './BorrowingInput';
 import RepayInput from './RepayInput';
+import { formatCollateralizationRatio, formatPrice } from 'lib/utils/prices';
 
 function getBorrowableAmount(
   collateral: number,
@@ -149,3 +146,26 @@ export default function Debt() {
     </>
   );
 }
+
+//// TODO: The following functions are not implemented
+function useYamatoStateForPledge(): { rateOfEthJpy: any; MCR: any; firstLoadCompleted: any; } {
+  return {
+    rateOfEthJpy: 0,
+    MCR: 0,
+    firstLoadCompleted: 0,
+  };
+}
+
+function usePledgeData(): { collateral: any; debt: any; } {
+  return {
+    collateral: 0,
+    debt: 0,
+  };
+}
+
+function useWalletState(): { cjpy: any; } {
+  return {
+    cjpy: 0,
+  };
+}
+

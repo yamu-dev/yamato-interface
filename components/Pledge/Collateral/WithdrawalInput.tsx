@@ -8,15 +8,12 @@ import { Formik, Form, Field, FormikHelpers, FieldProps } from 'formik';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MIN_COLLATERAL, YAMATO_SYMBOL } from '../../../constants/yamato';
-import { useActiveWeb3React } from '../../../hooks/web3';
-import { useWithdrawCallback } from '../../../hooks/yamato/useWithdrawCallback';
-import { subtractToNum } from '../../../utils/bignumber';
-import { errorToast } from '../../../utils/errorToast';
-import {
-  formatCollateralizationRatio,
-  formatPrice,
-} from '../../../utils/prices';
+// import { useActiveWeb3React } from '../../../hooks/web3';
+// import { useWithdrawCallback } from '../../../hooks/yamato/useWithdrawCallback';
 import { CustomButton, CustomFormLabel, CustomInput } from '../../CommonItem';
+import { formatCollateralizationRatio, formatPrice } from 'lib/utils/prices';
+import { subtractToNum } from 'lib/utils/bignumber';
+import { useAccount } from 'wagmi';
 
 type Props = {
   collateral: number;
@@ -27,7 +24,7 @@ type Props = {
 export default function WithdrawalInput(props: Props) {
   const { collateral, debt, rateOfEthJpy } = props;
 
-  const { account } = useActiveWeb3React();
+  const account = useAccount();
   const { callback } = useWithdrawCallback();
 
   const [withdrawal, setWithdrawal] = useState<number | ''>();
@@ -139,10 +136,9 @@ export default function WithdrawalInput(props: Props) {
             {withdrawal && withdrawal > 0 && (
               <VStack spacing={4} align="start">
                 <CustomFormLabel
-                  text={`${t('pledge.collateral.predictedFluctuation')} ${
-                    formatPrice(subtractToNum(collateral, withdrawal), 'jpy')
-                      .value
-                  } ${YAMATO_SYMBOL.COLLATERAL}`}
+                  text={`${t('pledge.collateral.predictedFluctuation')} ${formatPrice(subtractToNum(collateral, withdrawal), 'jpy')
+                    .value
+                    } ${YAMATO_SYMBOL.COLLATERAL}`}
                 />
                 <CustomFormLabel
                   text={`${t(
@@ -160,3 +156,13 @@ export default function WithdrawalInput(props: Props) {
     </Formik>
   );
 }
+
+//// TODO: Please implement the errorToast function
+function errorToast(error: unknown) {
+  return;
+}
+
+function useWithdrawCallback(): { callback: any; } {
+  return { callback: null };
+}
+

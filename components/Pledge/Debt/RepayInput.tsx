@@ -9,15 +9,17 @@ import { Formik, Form, Field, FormikHelpers, FieldProps } from 'formik';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { YAMATO_SYMBOL } from '../../../constants/yamato';
-import { useActiveWeb3React } from '../../../hooks/web3';
-import { useRepayCallback } from '../../../hooks/yamato/useRepayCallback';
-import { subtractToNum } from '../../../utils/bignumber';
-import { errorToast } from '../../../utils/errorToast';
-import {
-  formatCollateralizationRatio,
-  formatPrice,
-} from '../../../utils/prices';
+// import { useActiveWeb3React } from '../../../hooks/web3';
+// import { useRepayCallback } from '../../../hooks/yamato/useRepayCallback';
+// import { subtractToNum } from '../../../utils/bignumber';
+// import { errorToast } from '../../../utils/errorToast';
+// import {
+//   formatCollateralizationRatio,
+//   formatPrice,
+// } from '../../../utils/prices';
 import { CustomButton, CustomFormLabel, CustomInput } from '../../CommonItem';
+import { formatCollateralizationRatio, formatPrice } from 'lib/utils/prices';
+import { subtractToNum } from 'lib/utils/bignumber';
 
 type Props = {
   collateral: number;
@@ -152,9 +154,8 @@ export default function RepayInput(props: Props) {
             {repayment && repayment > 0 && (
               <VStack spacing={4} align="start">
                 <CustomFormLabel
-                  text={`${t('pledge.debt.predictedFluctuation')} ${
-                    formatPrice(subtractToNum(debt, repayment), 'jpy').value
-                  } ${YAMATO_SYMBOL.YEN}`}
+                  text={`${t('pledge.debt.predictedFluctuation')} ${formatPrice(subtractToNum(debt, repayment), 'jpy').value
+                    } ${YAMATO_SYMBOL.YEN}`}
                 />
                 <CustomFormLabel
                   text={`${t(
@@ -171,4 +172,17 @@ export default function RepayInput(props: Props) {
       )}
     </Formik>
   );
+}
+
+//// TODO: Please remove this snippet and add the correct code snippet
+function useActiveWeb3React(): { account: any; } {
+  return { account: null };
+}
+
+function errorToast(error: unknown) {
+  return;
+}
+
+function useRepayCallback(): { callback: any; } {
+  return { callback: null };
 }

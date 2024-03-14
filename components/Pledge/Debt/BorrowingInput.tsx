@@ -8,16 +8,12 @@ import { Formik, Form, Field, FormikHelpers, FieldProps } from 'formik';
 import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { YAMATO_SYMBOL } from '../../../constants/yamato';
-import { useActiveWeb3React } from '../../../hooks/web3';
-import { useBorrowCallback } from '../../../hooks/yamato/useBorrowCallback';
-import { addToNum, divideToNum } from '../../../utils/bignumber';
-import { calcFee } from '../../../utils/calcFee';
-import { errorToast } from '../../../utils/errorToast';
-import {
-  formatCollateralizationRatio,
-  formatPrice,
-} from '../../../utils/prices';
+// import { useActiveWeb3React } from '../../../hooks/web3';
+// import { useBorrowCallback } from '../../../hooks/yamato/useBorrowCallback';
 import { CustomButton, CustomFormLabel, CustomInput } from '../../CommonItem';
+import { addToNum, divideToNum } from 'lib/utils/bignumber';
+import { formatCollateralizationRatio, formatPrice } from 'lib/utils/prices';
+import { useAccount } from 'wagmi';
 
 type Props = {
   collateral: number;
@@ -29,7 +25,7 @@ type Props = {
 export default function BorrowingInput(props: Props) {
   const { collateral, debt, rateOfEthJpy, MCR } = props;
 
-  const { account } = useActiveWeb3React();
+  const account = useAccount();
   const { callback } = useBorrowCallback();
 
   const { t } = useTranslation();
@@ -155,21 +151,18 @@ export default function BorrowingInput(props: Props) {
             {borrowing && borrowing > 0 && (
               <VStack spacing={4} align="start">
                 <CustomFormLabel
-                  text={`${t('pledge.debt.receiptAmount')} ${
-                    formatPrice(borrowing - feeResult.fee, 'jpy').value
-                  } ${YAMATO_SYMBOL.YEN}`}
+                  text={`${t('pledge.debt.receiptAmount')} ${formatPrice(borrowing - feeResult.fee, 'jpy').value
+                    } ${YAMATO_SYMBOL.YEN}`}
                 />
                 <CustomFormLabel
-                  text={`${t('pledge.debt.fee')} ${
-                    formatPrice(feeResult.fee, 'jpy').value
-                  } ${YAMATO_SYMBOL.YEN}(${t(
-                    'pledge.debt.feeRate'
-                  )} ${feeResult.feeRate.toFixed(2)}%)`}
+                  text={`${t('pledge.debt.fee')} ${formatPrice(feeResult.fee, 'jpy').value
+                    } ${YAMATO_SYMBOL.YEN}(${t(
+                      'pledge.debt.feeRate'
+                    )} ${feeResult.feeRate.toFixed(2)}%)`}
                 />
                 <CustomFormLabel
-                  text={`${t('pledge.debt.totalBorrowAmount')} ${
-                    formatPrice(addToNum(debt, borrowing), 'jpy').value
-                  } ${YAMATO_SYMBOL.YEN}`}
+                  text={`${t('pledge.debt.totalBorrowAmount')} ${formatPrice(addToNum(debt, borrowing), 'jpy').value
+                    } ${YAMATO_SYMBOL.YEN}`}
                 />
                 <CustomFormLabel
                   text={`${t(
@@ -187,3 +180,18 @@ export default function BorrowingInput(props: Props) {
     </Formik>
   );
 }
+
+
+//// TODO: Please remove this snippet and use the one from the library
+function calcFee(borrowing: number, ICR: number): any {
+  return { fee: 0, feeRate: 0 };
+}
+
+function errorToast(error: unknown) {
+  return;
+}
+
+function useBorrowCallback(): { callback: any; } {
+  return { callback: null };
+}
+

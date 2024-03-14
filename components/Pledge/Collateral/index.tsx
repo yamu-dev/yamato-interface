@@ -1,13 +1,13 @@
 import { Grid, GridItem, Skeleton } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { YAMATO_SYMBOL } from '../../../constants/yamato';
-import { usePledgeData } from '../../../state/pledge/hooks';
-import { useYamatoStateForPledge } from '../../../state/yamato-entirety/hooks';
-import { multiplyToNum } from '../../../utils/bignumber';
-import { formatPrice } from '../../../utils/prices';
+// import { usePledgeData } from '../../../state/pledge/hooks';
+// import { useYamatoStateForPledge } from '../../../state/yamato-entirety/hooks';
 import { ItemTitleForPledge, ItemTitleValue } from '../../CommonItem';
 import DepositInput from './DepositInput';
 import WithdrawalInput from './WithdrawalInput';
+import { formatPrice } from 'lib/utils/prices';
+import { multiplyToNum } from 'lib/utils/bignumber';
 
 export default function Collateral() {
   const { rateOfEthJpy, firstLoadCompleted } = useYamatoStateForPledge();
@@ -94,3 +94,13 @@ export default function Collateral() {
     </>
   );
 }
+
+//// TODO: Please remove the following "export" statement once you have modified the code.
+function useYamatoStateForPledge(): { rateOfEthJpy: any; firstLoadCompleted: any; } {
+  return { rateOfEthJpy: 9999, firstLoadCompleted: true };
+}
+
+function usePledgeData(): { collateral: any; debt: any; } {
+  return { collateral: 9999, debt: 999 };
+}
+
