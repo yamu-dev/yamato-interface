@@ -1,4 +1,4 @@
-import { Container, Center, Grid, GridItem, Box } from "@chakra-ui/react";
+import { Container, Center, Grid, GridItem, Box, useMediaQuery } from "@chakra-ui/react";
 import { useAccount } from "wagmi";
 import Layout from "components/layouts/layout";
 import Pledge from "components/Pledge";
@@ -33,7 +33,7 @@ import Redemption from "./Redemption";
 // }
 
 
-export default function AccountDashboard() {
+export function AccountDashboard() {
   // const { account } = useWeb3React();
   const { isConnected } = useAccount();
   // const account = useAccount();
@@ -97,3 +97,84 @@ export default function AccountDashboard() {
     </Layout>
   );
 }
+
+export function AccountDashboardForMobile() {
+  // const { account } = useWeb3React();
+  const { isConnected } = useAccount();
+  // const account = useAccount();
+
+  // return (
+  //   <Layout>
+  //     {/* <Container maxW="container.xl" py={10}> */}
+  //     <Container py={10}>
+  //       {!!isConnected ? (
+  //         <>
+  //           <Center>
+  //             <Dashboard />
+  //           </Center>
+  //           <Center mt={10}>
+  //             <Pledge />
+  //           </Center>
+  //           <Center mt={10}>
+  //             <Redemption />
+  //           </Center>
+  //           <Center mt={10}>
+  //             <World />
+  //           </Center>
+  //           <Center mt={10}>
+  //             <Infographics />
+  //           </Center>
+  //         </>
+  //       ) : (
+  //         <Grid
+  //           templateColumns="repeat(3, 1fr)"
+  //           templateRows="repeat(4, 1fr)"
+  //           gap={8}
+  //           style={{
+  //             maxWidth: '960px',
+  //             margin: 'auto',
+  //             height: 'calc(100vh - 4rem - 7rem - 6.6rem )',
+  //           }}
+  //         >
+  //           <GridItem rowSpan={1} colSpan={3}>
+  //             <Box className="divider" mt={'20px'} />
+
+  //             <Dashboard />
+  //           </GridItem>
+
+  //           <GridItem rowSpan={1} colSpan={2}>
+  //             <World />
+  //           </GridItem>
+
+  //           <GridItem rowSpan={1} colSpan={1}>
+  //             <Infographics />
+  //           </GridItem>
+  //         </Grid>
+  //       )}
+  //     </Container>
+  //   </Layout >
+  // );
+
+  return (
+    <Layout>
+      <Container maxW="container.xl" py={10}>
+        <Center>
+          <Dashboard />
+        </Center>
+        {/* <Center mt={10}>
+          <Pledge />
+        </Center>
+        <Center mt={10}>
+          <Redemption />
+        </Center>
+        <Center mt={10}>
+          <World />
+        </Center>
+        <Center mt={10}>
+          <Infographics />
+        </Center> */}
+      </Container>
+    </Layout>
+  );
+}
+

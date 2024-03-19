@@ -227,7 +227,7 @@ export default function Infographics(props: Partial<InfographicsProps>) {
         >
           <CardHeader bg={"#5bad92"} py={2}>
             <Heading size="md" color={"white"}>
-              Yamato Statistics
+              CJPY Now
               {/* <Tooltip
                 hasArrow
                 label={
