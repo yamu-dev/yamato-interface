@@ -20,7 +20,8 @@ import {
   Avatar,
   useMediaQuery,
   Wrap,
-  WrapItem
+  WrapItem,
+  Container
 } from "@chakra-ui/react";
 import {
   CategoryTitle,
@@ -108,8 +109,6 @@ export default function YamatoStatistics({
     [cjpyAddress]
   );
 
-  const [wrap] = useState(false);
-
   return (
     <>
       <Card
@@ -137,8 +136,8 @@ export default function YamatoStatistics({
         </CardHeader>
         <CardBody>
           {/* <Grid templateColumns="repeat(2, 1fr)" gap={2}> */}
-          {/* <Flex wrap="wrap" justifyContent="center" gap={2}> */}
-          <Flex wrap="wrap" direction={wrap ? 'column' : 'row'} gap={2}>
+          <Flex wrap="wrap" gap={2}>
+            {/* <Flex wrap="wrap" direction={wrap ? 'column' : 'row'} gap={2}> */}
             <DashboardItem
               title={'TVL'}
               stat={`¥${formatPrice(tvl, 'jpy').value}`}

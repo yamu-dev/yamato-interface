@@ -183,26 +183,23 @@ export interface InfographicsProps {
 // export default function Infographics(props: Partial<InfographicsProps>) {
 export default function Infographics(props: Partial<InfographicsProps>) {
   const { t } = useTranslation();
-  const breakpointXl = '820px';
-  const [isPC] = useMediaQuery(`(min-width: ${breakpointXl})`);
 
   return (
     <>
-      {isPC ? (
-        <Card
-          flex={1}
-          maxW="5xl"
-          bg={"#fcfaf2"}
-          style={{
-            boxShadow: "rgba(0, 0, 0, 0.25) 3px 3px 0px",
-            borderRadius: "0px",
-          }}
-          color={"#818181"}
-        >
-          <CardHeader bg={"#5bad92"} py={2}>
-            <Heading size="md" color={"white"}>
-              CJPY Now
-              {/* <Tooltip
+      <Card
+        flex={1}
+        maxW="5xl"
+        bg={"#fcfaf2"}
+        style={{
+          boxShadow: "rgba(0, 0, 0, 0.25) 3px 3px 0px",
+          borderRadius: "0px",
+        }}
+        color={"#818181"}
+      >
+        <CardHeader bg={"#5bad92"} py={2}>
+          <Heading size="md" color={"white"}>
+            CJPY Now
+            {/* <Tooltip
                 hasArrow
                 label={
                   <Text whiteSpace={"pre-wrap"}>{t("dashboard.yamatoStatisticsHelp")}</Text>
@@ -210,37 +207,11 @@ export default function Infographics(props: Partial<InfographicsProps>) {
               >
                 <QuestionIcon fontSize={"md"} mb={1} ml={1} />
               </Tooltip> */}
-            </Heading>
-          </CardHeader>
-          <CardBody>
-          </CardBody>
-        </Card>) : (
-        <Card
-          flex={1}
-          maxW="5xl"
-          bg={"#fcfaf2"}
-          style={{
-            boxShadow: "rgba(0, 0, 0, 0.25) 3px 3px 0px",
-            borderRadius: "0px",
-          }}
-          color={"#818181"}
-        >
-          <CardHeader bg={"#5bad92"} py={2}>
-            <Heading size="md" color={"white"}>
-              CJPY Now
-              {/* <Tooltip
-                hasArrow
-                label={
-                  <Text whiteSpace={"pre-wrap"}>{t("dashboard.yamatoStatisticsHelp")}</Text>
-                }
-              >
-                <QuestionIcon fontSize={"md"} mb={1} ml={1} />
-              </Tooltip> */}
-            </Heading>
-          </CardHeader>
-          <CardBody>
-          </CardBody>
-        </Card>)}
+          </Heading>
+        </CardHeader>
+        <CardBody>
+        </CardBody>
+      </Card>
     </>
   );
 }

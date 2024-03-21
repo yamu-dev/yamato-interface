@@ -14,7 +14,7 @@ export function DashboardItem(props: Props) {
     <Box>
       <HStack justifyContent={"space-between"}>
         {/* <Box width="10rem" whiteSpace="nowrap">{props.title}</Box> */}
-        <Box width={{ base: "7rem", sm: "10rem", xl: "10rem" }} whiteSpace="nowrap">{props.title}</Box>
+        <Box width={{ base: "5rem", sm: "10rem", xl: "10rem" }}>{props.title}</Box>
         {props.firstLoadCompleted ? (
           // <Box width={"13rem"}>
           <Box w={{ base: "10rem", sm: "13rem", lg: "13rem" }} whiteSpace="nowrap">

@@ -14,7 +14,7 @@ export default function Layout({
   return (
     <>
       <MetaTags />
-      <Header title={title ? title : "VotingEscrow"} />
+      <Header title={title ? title : "Yamato Protocol Interface"} />
       <Box bgImage="url('/background_main.webp')">{children}</Box>
       <Footer />
     </>
