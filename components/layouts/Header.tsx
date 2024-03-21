@@ -23,17 +23,39 @@ export default function Header({ title }: HeaderProps) {
           justifyContent="space-between"
           alignItems="center"
         >
-          <HStack>
-            <Link href="/">
-              <SvgYamatoLogWithTitle width={200} height={30} />
-            </Link>
-          </HStack>
-          <HStack spacing={{ base: 2, md: 4 }}>
-            (isPC ? <w3m-button balance={"hide"} /> : <w3m-button balance={"hide"} />)
-            {/* <w3m-button balance={"hide"} /> */}
-          </HStack>
+          {isPC ? <HeaderItem /> : <HeaderItemForMobile />}
         </Flex>
       </Container>
     </Box>
+  );
+}
+
+export function HeaderItem({ title }: HeaderProps) {
+  return (
+    <>
+      <HStack>
+        <Link href="/">
+          <SvgYamatoLogWithTitle width={200} height={30} />
+        </Link>
+      </HStack>
+      <HStack spacing={{ base: 2, md: 4 }}>
+        <w3m-button balance={"hide"} size="md" />
+      </HStack>
+    </>
+  );
+}
+
+export function HeaderItemForMobile({ title }: HeaderProps) {
+  return (
+    <>
+      <HStack>
+        <Link href="/">
+          <SvgYamatoLogWithTitle width={160} height={30} />
+        </Link>
+      </HStack>
+      <HStack spacing={{ base: 2, md: 4 }}>
+        <w3m-button balance={"hide"} disabled={true} size="sm" />
+      </HStack>
+    </>
   );
 }
