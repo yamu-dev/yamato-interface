@@ -100,12 +100,11 @@ export default function DepositInput(props: Props) {
         <Form>
           <VStack spacing={4} align="start">
             <HStack
-              spacing={4}
-              align={
-                formikProps.errors.deposit && formikProps.touched.deposit
-                  ? 'center'
-                  : 'end'
-              }
+              spacing={{ base: 2, md: 4 }}
+              align={{
+                base: 'start', // スマートフォン用に変更
+                md: formikProps.errors.deposit && formikProps.touched.deposit ? 'center' : 'end', // PC用
+              }}
             >
               <Field name="deposit" validate={validateDeposit}>
                 {({ field }: FieldProps) => (
@@ -140,7 +139,7 @@ export default function DepositInput(props: Props) {
               </CustomButton>
             </HStack>
             {deposit && deposit > 0 && (
-              <VStack spacing={4} align="start">
+              <VStack spacing={{ base: 2, md: 4 }} align="start">
                 <CustomFormLabel
                   text={`${t('pledge.collateral.predictedFluctuation')} ${formatPrice(addToNum(collateral, deposit), 'jpy').value
                     } ${YAMATO_SYMBOL.COLLATERAL}`}

@@ -52,8 +52,8 @@ export const ItemTitleForPledge = styled.label<{
   margin-top: ${({ marginTop }) => marginTop ?? 0}px;
   display: inline-block;
   font-style: normal;
-  font-weight: bold;
-  font-size: 1.4rem;
+  font-weight: Normal;
+  font-size: 1rem;
   line-height: 1.6rem;
 `;
 
@@ -76,8 +76,8 @@ export const ItemTitleValue = styled.p<{
   margin-top: ${({ marginTop }) => marginTop ?? 0}px;
   display: inline-block;
   font-style: normal;
-  font-weight: bold;
-  font-size: 1.4rem;
+  font-weight: Normal;
+  font-size: 1rem;
   line-height: 1.6rem;
 `;
 

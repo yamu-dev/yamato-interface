@@ -161,7 +161,7 @@ export function AccountDashboardForMobile() {
         <Center>
           <Dashboard />
         </Center>
-        {/* <Center mt={10}>
+        <Center mt={10}>
           <Pledge />
         </Center>
         <Center mt={10}>
@@ -172,7 +172,7 @@ export function AccountDashboardForMobile() {
         </Center>
         <Center mt={10}>
           <Infographics />
-        </Center> */}
+        </Center>
       </Container>
     </Layout>
   );
