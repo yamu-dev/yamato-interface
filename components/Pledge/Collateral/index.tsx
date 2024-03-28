@@ -16,7 +16,7 @@ export default function Collateral() {
 
   return (
     <>
-      <Grid templateColumns="repeat(16, 1fr)" gap={4} mb={4}>
+      <Grid templateColumns="repeat(16, 1fr)" gap={4} mb={0}>
         <GridItem colSpan={2}>
           <ItemTitleForPledge marginTop={26}>
             {t('pledge.collateral.collateralBalance')}

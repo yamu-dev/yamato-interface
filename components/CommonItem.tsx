@@ -145,9 +145,10 @@ export function CustomFormLabel(props: {
       style={{
         fontStyle: 'normal',
         fontWeight: 500,
-        fontSize: '1.2rem',
-        lineHeight: '1.4rem',
+        fontSize: '0.8rem',
+        lineHeight: '1.2rem',
         color: '#818181',
+        whiteSpace: 'nowrap',
       }}
     >
       {props.text}
@@ -164,8 +165,9 @@ export function CustomInput(
     <Input
       {...props}
       borderRadius="unset"
+      size='xs'
       style={{
-        fontSize: '1.4rem',
+        fontSize: '1rem',
         textAlign: 'right',
         background: '#FCFAF2',
         border: '1px solid #F9AEA5',
@@ -198,7 +200,7 @@ export function CustomButton(
         boxShadow: '2px 2px 0px rgba(0, 0, 0, 0.25)',
         maxWidth: '180px',
         minWidth: '120px',
-        height: '2.6rem',
+        height: '1.7rem',
       }}
     >
       {props.children}
