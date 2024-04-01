@@ -50,11 +50,13 @@ export const ItemTitleForPledge = styled.label<{
   width: ${({ width }) => width ?? '100px'};
   color: ${({ theme }) => theme.text1};
   margin-top: ${({ marginTop }) => marginTop ?? 0}px;
+  margin-left: 10px;
   display: inline-block;
   font-style: normal;
   font-weight: Normal;
   font-size: 1rem;
   line-height: 1.6rem;
+  white-space: nowrap;
 `;
 
 export const ItemTitleForInfographics = styled.label<{
@@ -74,11 +76,13 @@ export const ItemTitleValue = styled.p<{
   width: ${({ width }) => width ?? '100%'};
   color: ${({ theme }) => theme.text1};
   margin-top: ${({ marginTop }) => marginTop ?? 0}px;
+  margin-left: 10px;
   display: inline-block;
   font-style: normal;
   font-weight: Normal;
   font-size: 1rem;
   line-height: 1.6rem;
+  white-space: nowrap;
 `;
 
 /**
@@ -174,6 +178,7 @@ export function CustomInput(
         boxSizing: 'border-box',
         boxShadow: '1px 1px 0px rgba(0, 0, 0, 0.25)',
         maxWidth: '140px',
+        height: '1.4rem',
       }}
     />
   );
@@ -200,7 +205,7 @@ export function CustomButton(
         boxShadow: '2px 2px 0px rgba(0, 0, 0, 0.25)',
         maxWidth: '180px',
         minWidth: '120px',
-        height: '1.7rem',
+        height: '1.4rem',
       }}
     >
       {props.children}

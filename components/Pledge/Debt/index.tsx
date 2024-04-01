@@ -8,6 +8,7 @@ import { ItemTitleValue, ItemTitleForPledge } from '../../CommonItem';
 import BorrowInput from './BorrowingInput';
 import RepayInput from './RepayInput';
 import { formatCollateralizationRatio, formatPrice } from 'lib/utils/prices';
+import { PledgeItem } from '../PledgeItem';
 
 function getBorrowableAmount(
   collateral: number,
@@ -40,14 +41,14 @@ export default function Debt() {
 
   return (
     <>
-      <Grid templateColumns="repeat(8, 1fr)" gap={4} mb={4}>
-        <GridItem colSpan={1}>
-          <ItemTitleForPledge marginTop={26}>
+      <Grid templateColumns="repeat(8, 1fr)" gap={4} mb={4} >
+        {/* <GridItem colSpan={1.8}>
+          <ItemTitleForPledge marginTop={15}>
             {t('pledge.debt.maximumBorrowableAmount')}
           </ItemTitleForPledge>
         </GridItem>
         <GridItem colSpan={2}>
-          <ItemTitleValue marginTop={26}>
+          <ItemTitleValue marginTop={15}>
             {firstLoadCompleted ? (
               <>
                 {
@@ -69,18 +70,23 @@ export default function Debt() {
               />
             )}
           </ItemTitleValue>
-        </GridItem>
+        </GridItem> */}
+        <PledgeItem
+              title={t('pledge.debt.maximumBorrowableAmount')}
+              stat={formatPrice(getBorrowableAmount(collateral, debt, rateOfEthJpy, MCR), 'jpy').value + ' ' + YAMATO_SYMBOL.YEN}
+              firstLoadCompleted={firstLoadCompleted}
+        />
       </Grid>
-      <Grid templateColumns="repeat(16, 1fr)" gap={4} mb={4}>
-        <GridItem colSpan={2}>
-          <ItemTitleForPledge marginTop={26}>
+      <Grid templateColumns="repeat(16, 1fr)" gap={4} mb={0} >
+        {/* <GridItem colSpan={2}>
+          <ItemTitleForPledge marginTop={15}>
             {t('pledge.debt.borrowBalance')}
           </ItemTitleForPledge>
         </GridItem>
 
         <GridItem colSpan={3}>
           <ItemTitleValue
-            marginTop={26}
+            marginTop={15}
             data-testid="borrowing-data-currentAmount"
           >
             {firstLoadCompleted ? (
@@ -99,8 +105,12 @@ export default function Debt() {
               />
             )}
           </ItemTitleValue>
-        </GridItem>
-
+        </GridItem> */}
+        <PledgeItem
+              title={t('pledge.debt.borrowBalance')}
+              stat={formatPrice(debt, 'jpy').value + ' ' + YAMATO_SYMBOL.YEN}
+              firstLoadCompleted={firstLoadCompleted}
+        />
         <GridItem colSpan={5}>
           <BorrowInput
             collateral={collateral}
@@ -119,14 +129,14 @@ export default function Debt() {
           />
         </GridItem>
       </Grid>
-      <Grid templateColumns="repeat(8, 1fr)" gap={4} mb={4}>
-        <GridItem colSpan={1}>
-          <ItemTitleForPledge marginTop={26}>
+      <Grid templateColumns="repeat(8, 1fr)" gap={4} mb={0} mt={-10}>
+        {/* <GridItem colSpan={1}>
+          <ItemTitleForPledge marginTop={2}>
             {t('pledge.debt.collateralRate')}
           </ItemTitleForPledge>
         </GridItem>
         <GridItem colSpan={1}>
-          <ItemTitleValue marginTop={26}>
+          <ItemTitleValue marginTop={2}>
             {firstLoadCompleted ? (
               <>
                 {formatCollateralizationRatio(collateral * rateOfEthJpy, debt)}%
@@ -141,7 +151,12 @@ export default function Debt() {
               />
             )}
           </ItemTitleValue>
-        </GridItem>
+        </GridItem> */}
+        <PledgeItem
+              title={t('pledge.debt.collateralRate')}
+              stat={formatCollateralizationRatio(collateral * rateOfEthJpy, debt) + '%'}
+              firstLoadCompleted={firstLoadCompleted}
+        />
       </Grid>
     </>
   );
@@ -150,22 +165,22 @@ export default function Debt() {
 //// TODO: The following functions are not implemented
 function useYamatoStateForPledge(): { rateOfEthJpy: any; MCR: any; firstLoadCompleted: any; } {
   return {
-    rateOfEthJpy: 0,
-    MCR: 0,
-    firstLoadCompleted: 0,
+    rateOfEthJpy: 10000000,
+    MCR: 10000,
+    firstLoadCompleted: true,
   };
 }
 
 function usePledgeData(): { collateral: any; debt: any; } {
   return {
-    collateral: 0,
-    debt: 0,
+    collateral: 9999,
+    debt: 99999999,
   };
 }
 
 function useWalletState(): { cjpy: any; } {
   return {
-    cjpy: 0,
+    cjpy: 999999999,
   };
 }
 

@@ -8,6 +8,7 @@ import DepositInput from './DepositInput';
 import WithdrawalInput from './WithdrawalInput';
 import { formatPrice } from 'lib/utils/prices';
 import { multiplyToNum } from 'lib/utils/bignumber';
+import { PledgeItem } from '../PledgeItem';
 
 export default function Collateral() {
   const { rateOfEthJpy, firstLoadCompleted } = useYamatoStateForPledge();
@@ -16,14 +17,19 @@ export default function Collateral() {
 
   return (
     <>
-      <Grid templateColumns="repeat(16, 1fr)" gap={4} mb={0}>
-        <GridItem colSpan={2}>
+      <Grid templateColumns="repeat(16, 1fr)" gap={4} mb={0} >
+        {/* <GridItem colSpan={2}>
           <ItemTitleForPledge marginTop={26}>
             {t('pledge.collateral.collateralBalance')}
           </ItemTitleForPledge>
-        </GridItem>
+        </GridItem> */}
+        <PledgeItem
+              title={'ETH' + t('dashboard.price')}
+              stat={formatPrice(collateral, 'eth').value + ' ' + YAMATO_SYMBOL.COLLATERAL}
+              firstLoadCompleted={firstLoadCompleted}
+        />
 
-        <GridItem colSpan={3}>
+        {/* <GridItem colSpan={3}>
           <ItemTitleValue
             marginTop={26}
             data-testid="collateral-data-currentAmount"
@@ -44,27 +50,27 @@ export default function Collateral() {
               />
             )}
           </ItemTitleValue>
-        </GridItem>
+        </GridItem> */}
 
-        <GridItem colSpan={5}>
+        {/* <GridItem colSpan={5}> */}
           <DepositInput
             collateral={collateral}
             debt={debt}
             rateOfEthJpy={rateOfEthJpy}
           />
-        </GridItem>
+        {/* </GridItem> */}
 
-        <GridItem colSpan={6}>
+        {/* <GridItem colSpan={6}> */}
           <WithdrawalInput
             collateral={collateral}
             debt={debt}
             rateOfEthJpy={rateOfEthJpy}
           />
-        </GridItem>
+        {/* </GridItem> */}
       </Grid>
 
       <Grid templateColumns="repeat(8, 1fr)" gap={4} mb={4}>
-        <GridItem colSpan={1}>
+        {/* <GridItem colSpan={1}>
           <ItemTitleForPledge marginTop={26}>
             {t('pledge.collateral.valuation')}
           </ItemTitleForPledge>
@@ -89,7 +95,12 @@ export default function Collateral() {
               />
             )}
           </ItemTitleValue>
-        </GridItem>
+        </GridItem> */}
+        <PledgeItem
+              title={t('pledge.collateral.valuation')}
+              stat={`¥${formatPrice(multiplyToNum(collateral, rateOfEthJpy), 'jpy').value}`}
+              firstLoadCompleted={firstLoadCompleted}
+        />
       </Grid>
     </>
   );
