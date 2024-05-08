@@ -56,7 +56,7 @@ export function AccountDashboard() {
 
               <Box className="divider" mt={'20px'} />
 
-              <Redemption />
+              {/* <Redemption /> */}
             </GridItem>
 
             <GridItem colSpan={1}>
