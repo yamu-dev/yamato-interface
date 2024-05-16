@@ -41,7 +41,7 @@ export default function Debt() {
 
   return (
     <>
-      <Grid templateColumns="repeat(8, 1fr)" gap={4} mb={4} >
+      <Grid templateColumns="repeat(16, 1fr)" gap={4} mb={4} >
         {/* <GridItem colSpan={1.8}>
           <ItemTitleForPledge marginTop={15}>
             {t('pledge.debt.maximumBorrowableAmount')}
@@ -72,9 +72,9 @@ export default function Debt() {
           </ItemTitleValue>
         </GridItem> */}
         <PledgeItem
-              title={t('pledge.debt.maximumBorrowableAmount')}
-              stat={formatPrice(getBorrowableAmount(collateral, debt, rateOfEthJpy, MCR), 'jpy').value + ' ' + YAMATO_SYMBOL.YEN}
-              firstLoadCompleted={firstLoadCompleted}
+          title={t('pledge.debt.maximumBorrowableAmount')}
+          stat={formatPrice(getBorrowableAmount(collateral, debt, rateOfEthJpy, MCR), 'jpy').value + ' ' + YAMATO_SYMBOL.YEN}
+          firstLoadCompleted={firstLoadCompleted}
         />
       </Grid>
       <Grid templateColumns="repeat(16, 1fr)" gap={4} mb={0} >
@@ -107,29 +107,13 @@ export default function Debt() {
           </ItemTitleValue>
         </GridItem> */}
         <PledgeItem
-              title={t('pledge.debt.borrowBalance')}
-              stat={formatPrice(debt, 'jpy').value + ' ' + YAMATO_SYMBOL.YEN}
-              firstLoadCompleted={firstLoadCompleted}
+          title={t('pledge.debt.borrowBalance')}
+          stat={formatPrice(debt, 'jpy').value + ' ' + YAMATO_SYMBOL.YEN}
+          firstLoadCompleted={firstLoadCompleted}
         />
-        <GridItem colSpan={5}>
-          <BorrowInput
-            collateral={collateral}
-            debt={debt}
-            rateOfEthJpy={rateOfEthJpy}
-            MCR={MCR}
-          />
-        </GridItem>
-
-        <GridItem colSpan={6}>
-          <RepayInput
-            collateral={collateral}
-            debt={debt}
-            rateOfEthJpy={rateOfEthJpy}
-            cjpy={cjpy}
-          />
-        </GridItem>
+        <Inputs />
       </Grid>
-      <Grid templateColumns="repeat(8, 1fr)" gap={4} mb={0} mt={-10}>
+      <Grid templateColumns="repeat(8, 1fr)" gap={4} mb={0} mt={-8}>
         {/* <GridItem colSpan={1}>
           <ItemTitleForPledge marginTop={2}>
             {t('pledge.debt.collateralRate')}
@@ -153,11 +137,39 @@ export default function Debt() {
           </ItemTitleValue>
         </GridItem> */}
         <PledgeItem
-              title={t('pledge.debt.collateralRate')}
-              stat={formatCollateralizationRatio(collateral * rateOfEthJpy, debt) + '%'}
-              firstLoadCompleted={firstLoadCompleted}
+          title={t('pledge.debt.collateralRate')}
+          stat={formatCollateralizationRatio(collateral * rateOfEthJpy, debt) + '%'}
+          firstLoadCompleted={firstLoadCompleted}
         />
       </Grid>
+    </>
+  );
+}
+
+export function Inputs() {
+  const { rateOfEthJpy, MCR, firstLoadCompleted } = useYamatoStateForPledge();
+  const { collateral, debt } = usePledgeData();
+  const { cjpy } = useWalletState();
+  const { t } = useTranslation();
+  return (
+    <>
+      {/* <GridItem colSpan={5}> */}
+      <BorrowInput
+        collateral={collateral}
+        debt={debt}
+        rateOfEthJpy={rateOfEthJpy}
+        MCR={MCR}
+      />
+      {/* </GridItem> */}
+
+      {/* <GridItem colSpan={6}> */}
+      <RepayInput
+        collateral={collateral}
+        debt={debt}
+        rateOfEthJpy={rateOfEthJpy}
+        cjpy={cjpy}
+      />
+      {/* </GridItem> */}
     </>
   );
 }

@@ -126,8 +126,8 @@ export default function RepayInput(props: Props) {
                     {debt > 0 && cjpy > 0 && (
                       <Button
                         variant="outline"
-                        size="sm"
-                        style={{ marginLeft: '5px' }}
+                        size="xd"
+                        style={{ marginLeft: '30px' }}
                         onClick={() => {
                           const value = Math.min(debt, cjpy);
                           form.setFieldValue('repayment', value);
