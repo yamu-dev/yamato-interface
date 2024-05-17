@@ -24,9 +24,9 @@ export default function Collateral() {
           </ItemTitleForPledge>
         </GridItem> */}
         <PledgeItem
-              title={'ETH' + t('dashboard.price')}
-              stat={formatPrice(collateral, 'eth').value + ' ' + YAMATO_SYMBOL.COLLATERAL}
-              firstLoadCompleted={firstLoadCompleted}
+          title={'ETH' + t('dashboard.price')}
+          stat={formatPrice(collateral, 'eth').value + ' ' + YAMATO_SYMBOL.COLLATERAL}
+          firstLoadCompleted={firstLoadCompleted}
         />
 
         {/* <GridItem colSpan={3}>
@@ -53,19 +53,19 @@ export default function Collateral() {
         </GridItem> */}
 
         {/* <GridItem colSpan={5}> */}
-          <DepositInput
-            collateral={collateral}
-            debt={debt}
-            rateOfEthJpy={rateOfEthJpy}
-          />
+        <DepositInput
+          collateral={collateral}
+          debt={debt}
+          rateOfEthJpy={rateOfEthJpy}
+        />
         {/* </GridItem> */}
 
         {/* <GridItem colSpan={6}> */}
-          <WithdrawalInput
-            collateral={collateral}
-            debt={debt}
-            rateOfEthJpy={rateOfEthJpy}
-          />
+        <WithdrawalInput
+          collateral={collateral}
+          debt={debt}
+          rateOfEthJpy={rateOfEthJpy}
+        />
         {/* </GridItem> */}
       </Grid>
 
@@ -97,9 +97,9 @@ export default function Collateral() {
           </ItemTitleValue>
         </GridItem> */}
         <PledgeItem
-              title={t('pledge.collateral.valuation')}
-              stat={`¥${formatPrice(multiplyToNum(collateral, rateOfEthJpy), 'jpy').value}`}
-              firstLoadCompleted={firstLoadCompleted}
+          title={t('pledge.collateral.valuation')}
+          stat={`¥${formatPrice(multiplyToNum(collateral, rateOfEthJpy), 'jpy').value}`}
+          firstLoadCompleted={firstLoadCompleted}
         />
       </Grid>
     </>

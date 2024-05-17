@@ -1,4 +1,4 @@
-import { Grid, GridItem, Skeleton } from '@chakra-ui/react';
+import { Flex, Grid, GridItem, Skeleton, VStack } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { YAMATO_SYMBOL } from '../../../constants/yamato';
 // import { usePledgeData } from '../../../state/pledge/hooks';
