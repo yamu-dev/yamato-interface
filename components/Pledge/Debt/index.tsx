@@ -1,4 +1,4 @@
-import { Flex, Grid, GridItem, Skeleton, VStack } from '@chakra-ui/react';
+import { Flex, Grid, GridItem, HStack, Skeleton, VStack } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { YAMATO_SYMBOL } from '../../../constants/yamato';
 // import { usePledgeData } from '../../../state/pledge/hooks';
@@ -153,23 +153,22 @@ export function Inputs() {
   const { t } = useTranslation();
   return (
     <>
-      {/* <GridItem colSpan={5}> */}
-      <BorrowInput
-        collateral={collateral}
-        debt={debt}
-        rateOfEthJpy={rateOfEthJpy}
-        MCR={MCR}
-      />
-      {/* </GridItem> */}
-
-      {/* <GridItem colSpan={6}> */}
-      <RepayInput
-        collateral={collateral}
-        debt={debt}
-        rateOfEthJpy={rateOfEthJpy}
-        cjpy={cjpy}
-      />
-      {/* </GridItem> */}
+      <Flex>
+        <HStack>
+          <BorrowInput
+            collateral={collateral}
+            debt={debt}
+            rateOfEthJpy={rateOfEthJpy}
+            MCR={MCR}
+          />
+          <RepayInput
+            collateral={collateral}
+            debt={debt}
+            rateOfEthJpy={rateOfEthJpy}
+            cjpy={cjpy}
+          />
+        </HStack>
+      </Flex>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import {
   Button,
+  Flex,
   FormControl,
   FormErrorMessage,
   HStack,
@@ -97,7 +98,7 @@ export default function RepayInput(props: Props) {
     >
       {(formikProps) => (
         <Form>
-          <VStack spacing={4} align="start">
+          <VStack>
             <HStack
               spacing={4}
               align={
@@ -116,26 +117,28 @@ export default function RepayInput(props: Props) {
                       htmlFor="repayment"
                       text={t('pledge.debt.repaymentAmountInput')}
                     />
-                    <CustomInput
-                      {...field}
-                      id="repayment"
-                      type="number"
-                      placeholder={YAMATO_SYMBOL.YEN}
-                      data-testid="borrowing-data-repayAmount"
-                    />
-                    {debt > 0 && cjpy > 0 && (
-                      <Button
-                        variant="outline"
-                        size="xd"
-                        style={{ marginLeft: '30px' }}
-                        onClick={() => {
-                          const value = Math.min(debt, cjpy);
-                          form.setFieldValue('repayment', value);
-                        }}
-                      >
-                        MAX
-                      </Button>
-                    )}
+                    <HStack>
+                      <CustomInput
+                        {...field}
+                        id="repayment"
+                        type="number"
+                        placeholder={YAMATO_SYMBOL.YEN}
+                        data-testid="borrowing-data-repayAmount"
+                      />
+                      {debt > 0 && cjpy > 0 && (
+                        <Button
+                          variant="outline"
+                          size="xs"
+                          style={{ marginLeft: '5px' }}
+                          onClick={() => {
+                            const value = Math.min(debt, cjpy);
+                            form.setFieldValue('repayment', value);
+                          }}
+                        >
+                          MAX
+                        </Button>
+                      )}
+                    </HStack>
                     <FormErrorMessage>
                       {formikProps.errors.repayment}
                     </FormErrorMessage>
@@ -152,7 +155,7 @@ export default function RepayInput(props: Props) {
               </CustomButton>
             </HStack>
             {repayment && repayment > 0 && (
-              <VStack spacing={4} align="start">
+              <VStack>
                 <CustomFormLabel
                   text={`${t('pledge.debt.predictedFluctuation')} ${formatPrice(subtractToNum(debt, repayment), 'jpy').value
                     } ${YAMATO_SYMBOL.YEN}`}

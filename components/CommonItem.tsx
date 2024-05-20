@@ -177,7 +177,7 @@ export function CustomInput(
         border: '1px solid #F9AEA5',
         boxSizing: 'border-box',
         boxShadow: '1px 1px 0px rgba(0, 0, 0, 0.25)',
-        maxWidth: '140px',
+        maxWidth: '160px',
         height: '1.4rem',
       }}
     />
@@ -203,9 +203,9 @@ export function CustomButton(
         color: '#FCFAF2',
         background: '#F9AEA5',
         boxShadow: '2px 2px 0px rgba(0, 0, 0, 0.25)',
-        maxWidth: '180px',
-        minWidth: '120px',
-        height: '1.4rem',
+        maxWidth: '200px',
+        minWidth: '100px',
+        height: '1.5rem',
       }}
     >
       {props.children}
